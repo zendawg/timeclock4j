@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 3.3 Clocking Out</title>
+
+<meta name="description" content="timeclockj (1.0.0): 3.3 Clocking Out">
+<meta name="keywords" content="timeclockj (1.0.0): 3.3 Clocking Out">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Clocking-Out"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Clocking-In.html#Clocking-In" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports.html#Generating-Reports" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-1"></a>
+<h2 class="section">3.3 Clocking Out</h2>
+
+<p>The <code>out</code> command is used to clock out. In addition to the
+options available given in <a href="Common-Command-Line-Options.html#Common-Command-Line-Options">Common Command Line Options</a>, the
+<code>out</code> command also has the following option:
+</p>
+<ul>
+<li>
+<code>-d,--description &lt;arg&gt;</code> Set the reason for clocking out. A description is
+                      optional. Specify descriptions
+                      with spaces in using quotes. For example, for a description
+                      <em>Had to leave meeting</em>, the option would be
+                      <code>-d &quot;Had to leave meeting&quot;</code>.
+
+</li><li>
+<code>-e,--end-date &lt;arg&gt;</code> Specify the clock-out date (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+</li></ul>
+
+<p>Attempting to clock-out to a <code>timeclock</code> file that already contains
+a clock-out (without succeeding clock-in) will result in an error and the
+clock-out will fail. Otherwise, the file will be appended with the
+new clocked-out time and description (if specified).
+</p>
+<p>To clock out of the currently clocked-in project, supply no arguments
+to <code>timeclockj out</code>. Running without any arguments will produce
+the following output (dates will vary of course):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out</b>
+Clocked out: 2010/10/07 13:42:37
+</pre></td></tr></table>
+
+<p>&hellip;produces the following output in the <code>timeclock</code> file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">o 2010/10/07 13:42:37
+</pre></td></tr></table>
+
+<p>Attempting to clock-out again will result in the following error:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out</b>
+You've already clocked out!
+</pre></td></tr></table>
+
+<p>To clock-out with a specific description, use the <code>-d</code> or <code>--description</code>
+option:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out -d Quit</b>
+Clocked out: 2010/10/07 13:44:51
+</pre></td></tr></table>
+
+<p>An entry will be appended to the end of the <code>timeclock</code> file as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">o 2010/10/07 13:44:51 Quit
+</pre></td></tr></table>
+
+<p>For descriptions containing spaces, ensure the option is surrounded
+with quotes, thus:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out --description &quot;Had to leave early, work pending.&quot;</b>
+Clocked out: 2010/10/07 13:44:51
+</pre></td></tr></table>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Clocking-In.html#Clocking-In" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports.html#Generating-Reports" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 5.2 Clocking In and Out With Android</title>
+
+<meta name="description" content="timeclockj (1.0.0): 5.2 Clocking In and Out With Android">
+<meta name="keywords" content="timeclockj (1.0.0): 5.2 Clocking In and Out With Android">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Clocking-In-and-Out-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Configuring-Android.html#Configuring-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Setting-the-Date-and-Time" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-and-Out-With-Android-1"></a>
+<h2 class="section">5.2 Clocking In and Out With Android</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Setting-the-Date-and-Time">5.2.1 Setting the Date and Time</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-In-With-Android">5.2.2 Clocking In With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-Out-With-Android">5.2.3 Clocking Out With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<p>Clocking-in is the process of selecting (or creating) a project and then selecting the <em>Clock In</em> button, and is covered in <a href="#Clocking-In-With-Android">Clocking In With Android</a>. Clocking-out is the process of clocking out of the currently clocked-in project, along with a description of the clock-activity, covered in <a href="#Clocking-Out-With-Android">Clocking Out With Android</a>. Whether clocking-in or -out, if no date or time is specified, the current device date and time is used. Users can optionally set the date and time for clocking-in and -out, covered in <a href="#Setting-the-Date-and-Time">Setting the Date and Time</a>.
+</p>
+<p>Once clocked-in, no other project can be clocked-in - that is, only a clock-out can occur once clocked-in. Likewise, once clocked-out, no other clock-outs can occur until clocked-in again.
+</p>
+<hr size="6">
+<a name="Setting-the-Date-and-Time"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Setting-the-Date-and-Time-1"></a>
+<h3 class="subsection">5.2.1 Setting the Date and Time</h3>
+
+<p>Prior to clocking-in or -out, the date and time can be changed. If neither checkbox for date and time is selected, the date and time is specified as the current device time when clocking-in or -out. For example, setting the date but not the time means that when the clock occurs, the device&rsquo;s time will be used (but not device date). Likewise, not setting
+<i>both</i> date and time implies that both are obtained from the device date and time when the clock occurs. Setting the date can be useful when a user has forgotten to clock in, or knows when a clock must occur but knows that they&rsquo;ll not have the device to hand.
+</p>
+<p>Be aware that users are expected to enter valid, meaningful dates. Setting the clock-out time to be <i>earlier</i> than the clock-in time will result in unpredictable behaviour when producing reports.
+</p>
+<p>To set the date, select the <em>Specify date</em> checkbox. A dialog will be presented:
+</p>
+<img src="images/android-clock-date.png" alt="images/android-clock-date">
+
+<p>Edit the date as appropriate and select <em>Set</em> to accept the date. To cancel, simply select <em>Cancel</em>. The date will ony ever be used if the <em>Specify date</em> checkbox is set. If <em>Set</em> is selected, the new date will be displayed in the text beneath the button to clock-in or -out. To set the time, select the <em>Specify time</em> checkbox. A dialog will be presented:
+</p>
+<img src="images/android-clock-time.png" alt="images/android-clock-time">
+
+<p>Edit the date as appropriate and select <em>Set</em> to accept the time. To cancel, simply select <em>Cancel</em>. The time will ony ever be used if the <em>Specify time</em> checkbox is set. If <em>Set</em> is selected, the new time will be displayed in the text beneath the button to clock-in or -out.
+</p>
+<hr size="6">
+<a name="Clocking-In-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Setting-the-Date-and-Time" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-Out-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-With-Android-1"></a>
+<h3 class="subsection">5.2.2 Clocking In With Android</h3>
+
+<p>The clock tab, when not clocked-in, has a screen similar to the following:
+</p>
+<img src="images/android-basic.png" alt="images/android-basic">
+
+<p>The clock-in screen contains the following:
+</p>
+<ul>
+<li> Clock status coloured red: &quot;Not currently clocked-in&quot;;
+
+</li><li> checkboxes for specifying the date and time of the clock-in;
+
+</li><li> a drop-down list for selecting the project to clock-in with (with <em>Gym</em> selected in the image), with the option to create a new project;
+
+</li><li> the <em>Clock In</em> button to clock-in; and
+
+</li><li> text underneath the <em>Clock In</em> button detailing the next clock action; in this case, it states that the next clock-in will be with project <em>Gym</em> with the
+current date and time 12:00. Editing any of the fields on this screen will update this text.
+
+</li></ul>
+
+<p>Clock-in by selecting the appropriate project from the drop-down list, and then selecting <em>Clock In</em>. Several options are available to clock-in via the drop-down list:
+</p>
+<ul>
+<li>
+Clock-in to the <em>&lt;default&gt;</em> (no-name) project;
+
+</li><li>
+Create a new project by selecting <em>New Project...</em>
+
+</li><li>
+Select a project that has already been created from selecting <em>New Project</em> previously.
+
+</li></ul>
+
+<p>The following image illustrates basic options for the default project, several other projects (<em>Gym</em> and <em>Spanish Course</em>) and the <em>New Project</em> option:
+</p>
+<img src="images/android-new-project-with-existing-projects.png" alt="images/android-new-project-with-existing-projects">
+
+<p>Selecting an existing project will ensure that the currently-selected project is displayed as the next project to clock-in with.
+</p>
+<p>To create a new project, select <code>New Project...</code> from the drop-down list. A dialog will be presented:
+</p>
+<img src="images/android-new-project-dialog.png" alt="images/android-new-project-dialog">
+
+<p>Enter the project name then select <code>OK</code>. The new project will be automatically clocked-in. Project names may contain any combination of alpha-numeric characters, spaces and
+underscore (<code>_</code>) characters.
+</p>
+<p>Once clocked in, the screen will change. The <em>Clock In</em> button will now say <em>Clock Out</em>, the project drop-down list will disappear and a new checkbox will appear for adding a description.
+</p>
+<hr size="6">
+<a name="Clocking-Out-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports-With-Android.html#Generating-Reports-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-With-Android-1"></a>
+<h3 class="subsection">5.2.3 Clocking Out With Android</h3>
+
+<p>The clock tab, when clocked-in, has a screen similar to the following:
+</p>
+<img src="images/android-pre-clockout.png" alt="images/android-pre-clockout">
+
+<p>The clock-in screen contains the following:
+</p>
+<ul>
+<li> Clock status, coloured green: &quot;Status: Currently clocked-in to <em>Gym</em>&quot;, or whatever the currently clocked-in project is;
+
+</li><li> checkboxes for specifying the date and time of the clock-out. This button is checked, and the time is displayed in the text beneath the <em>Clock Out</em> button;
+
+</li><li> a checkbox to enter a description, detailing the reason for clocking-out. This button is checked, and the description is displayed in the text beneath the <em>Clock Out</em> button;
+
+</li><li> the <em>Clock Out</em> button to clock-out.
+
+</li><li> text underneath the <em>Clock Out</em> button detailing the next clock action; in this case, it states that the clock out will occur with the current clocked-in project
+<em>Gym</em>, with current date, time 14:00, containing description <em>Standard workout, 3 sets x 12 reps</em>. Editing any of the fields on this screen will update this text.
+
+</li></ul>
+
+<p>To clock out of the current project, click the <code>Clock Out</code> button.
+</p>
+<p>A description can be added when clocking-out. Simply check the <em>Add Description</em> checkbox, then select clock-out. A dialog will be presented offering the opportunity to add a description. To add the description, enter required text then select <em>OK</em>. Clicking <em>Cancel</em> will return the user to the main screen and no clock-out will be performed.
+</p>
+<p>The description checkbox, when selected, will provide a dialog for entering a description.
+</p>
+<img src="images/android-clock-out-description.png" alt="images/android-clock-out-description">
+
+<p>Select <em>OK</em> to accept the description or <em>Cancel</em> to disregard your changes.
+</p>
+<p>Once clocked out, the screen will change. The <em>Clock Out</em> button will now say <em>Clock In</em>, the project drop-down list will re-appear and the checkbox for adding a description will disappear.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports-With-Android.html#Generating-Reports-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

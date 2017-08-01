@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              >
+  <TextView
+    android:text="TimeClock File"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textViewTimeClockFile"
+    />
+  <EditText
+    android:scrollHorizontally="true"
+    android:inputType="text"
+    android:id="@+id/editTextTimeClockFile"
+    android:maxLines="1"
+    android:imeOptions="actionNext|flagNoExtractUi"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    />
+  <TextView
+    android:text="Report Directory"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textViewReportDirectory"
+    />
+  <EditText
+    android:scrollHorizontally="true"
+    android:inputType="text"
+    android:id="@+id/editTextReportDirectory"
+    android:maxLines="1"
+    android:imeOptions="actionDone|flagNoExtractUi"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    />
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+    <Button
+      android:text="Apply"
+      android:id="@+id/buttonApply"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+    <Button
+      android:text="Cancel"
+      android:id="@+id/buttonCancel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  </LinearLayout>
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/text"
+    />
+</LinearLayout>

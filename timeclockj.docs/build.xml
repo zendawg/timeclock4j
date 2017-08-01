@@ -1,0 +1,108 @@
+<project name="Install Utilities" default="all" basedir=".">
+  <description>
+    Currently provides only the ability to create .HTML files from .texi files
+    and procude PDF documentation; relies on the GNU 'texi2html' and
+    'texi2pdf' utilities (available for all operating systems).
+
+    Both utilities are available for Linux via most repositories. Windows users
+    should download and install GNU Cygwin.
+  </description>
+  <!-- set global properties for this build -->
+
+  <property name="dir.help.files.texi" location="src/main/resources/doc/texinfo/"/>
+  <property name="dir.help.files.images" location="src/main/resources/doc/texinfo/images/"/>
+  <property name="dir.help.files.javahelp" location="src/main/resources/doc/javahelp/"/>
+  <property name="dir.ui.help" location="../timeclockj.ui/src/main/resources/help/"/>
+  <property name="tmp.dir.help.files.texi.timeclockj"
+            location="${dir.help.files.texi}/timeclockj"/>
+  <property name="tmp.dir.help.files.help" location="target/docs/javahelp/"/>
+  <property name="tmp.dir.help.files.pdf" location="target/docs/pdf/"/>
+  <!-- This is for the help docs that fit onto one, large page (HTML): -->
+  <property name="tmp.dir.help.files.single.html" location="target/docs/single-page-html/"/>
+  <property name="tmp.dir.help.files.multi.html" location="target/docs/multi-page-html/"/>
+  <property name="xxx" value="false"/>
+
+  <target name="all"
+          description="Build documentation of many different formats and copy to correct dirs."
+          depends="build-docs">
+            <echo message="Documentation is only built when the property generate.docs is set."/>
+  </target>
+  <!--          depends="build-docs, deploy-swing-help"/> -->
+
+  <target name="build-docs"
+          description="Build documentation of many different formats."
+          depends="build-texi-docs"/>
+
+  <target name="build-texi-docs" if="generate.docs"
+          description="Build technical documentation using texi2html."
+          depends="build-javahelp, build-pdf, build-one-page-html, build-multi-page-html"/>
+
+  <target name="build-multi-page-html" if="generate.docs"
+          description="Generate the HTML documentation using the texi2html command." >
+    <mkdir dir="${tmp.dir.help.files.multi.html}/"/>
+    <exec executable="texi2html" dir="${dir.help.files.texi}">
+      <arg value="--split=section"/>
+      <arg value="--node-files"/>
+      <arg value="--top-file=index.html"/>
+      <arg value="--verbose"/>
+      <arg value="--output=timeclockj"/>
+      <arg value="timeclockj.texi"/>
+    </exec>
+    <copy todir="${tmp.dir.help.files.multi.html}/">
+      <fileset file="${dir.help.files.texi}/timeclockj/*">
+        <exclude name="*.texi" />
+      </fileset>
+    </copy>
+    <copy todir="${tmp.dir.help.files.multi.html}/images/">
+      <fileset file="${dir.help.files.images}/*"/>
+    </copy>
+  </target>
+
+  <target name="build-one-page-html" if="generate.docs"
+          description="Generate the HTML documentation using the texi2html command, in one large file." >
+    <mkdir dir="${tmp.dir.help.files.single.html}/images" />
+    <exec executable="texi2html" dir="${dir.help.files.texi}">
+      <arg value="timeclockj.texi"/>
+    </exec>
+    <copy todir="${tmp.dir.help.files.single.html}" file="${dir.help.files.texi}/timeclockj.html"/>
+    <copy todir="${tmp.dir.help.files.single.html}/images">
+      <fileset dir="${dir.help.files.images}" includes="*.png" />
+    </copy>
+  </target>
+
+  <target name="build-javahelp" if="generate.docs"
+          description="Generate the documentation, composed of HTML and JavaHelp files."
+          depends="build-multi-page-html">
+    <mkdir dir="${tmp.dir.help.files.help}"/>
+    <move todir="${tmp.dir.help.files.help}/timeclockj">
+      <fileset file="${tmp.dir.help.files.texi.timeclockj}/**"/>
+    </move>
+    <copy todir="${tmp.dir.help.files.help}">
+      <fileset file="${dir.help.files.javahelp}/*.*"/>
+    </copy>
+    <copy todir="${tmp.dir.help.files.help}/timeclockj/images">
+      <fileset file="${dir.help.files.images}/*.png"/>
+    </copy>
+  </target>
+
+  <target name="build-pdf" if="generate.docs"
+          description="Generate the PDF documentation from the texi2pdf command." >
+    <mkdir dir="${tmp.dir.help.files.pdf}"/>
+    <exec executable="texi2pdf" dir="${dir.help.files.texi}">
+      <arg value="--clean"/>
+      <arg value="timeclockj.texi"/>
+    </exec>
+    <move todir="${tmp.dir.help.files.pdf}">
+      <fileset file="${dir.help.files.texi}/timeclockj.pdf"/>
+    </move>
+  </target>
+
+  <target name="clean"
+          description="Removes directories generated from this build file." >
+    <delete dir="${tmp.dir.help.files.help}"/>
+    <delete dir="${tmp.dir.help.files.pdf}"/>
+    <delete dir="${tmp.dir.help.files.html}"/>
+    <delete dir="${dir.ui.help}"/>
+  </target>
+
+</project>

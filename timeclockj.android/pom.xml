@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2009 Jayway AB
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>timeclockj</artifactId>
+    <groupId>org.statefive</groupId>
+    <version>1.1</version>
+  </parent>
+  <groupId>org.statefive</groupId>
+  <artifactId>timeclockj.android</artifactId>
+  <packaging>apk</packaging>
+  <name>TimeClockJ for Android</name>
+  <version>1.1</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.statefive</groupId>
+      <artifactId>libtimeclockj</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.statefive</groupId>
+      <artifactId>libtimeclockj.ui</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+      <version>4.1.1.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.dropbox.android</groupId>
+      <artifactId>dropbox-sdk</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>4.0.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-httpcore</groupId>
+      <artifactId>commons-httpcore</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-httpmime</groupId>
+      <artifactId>commons-httpmime</artifactId>
+      <version>4.0.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-json-simple</groupId>
+      <artifactId>commons-json-simple</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <!-- 
+    This was breaking when adding integration tests. -->
+    <!--    <dependency>
+      <groupId>oauth.signpost</groupId>
+      <artifactId>oauth-signpost</artifactId>
+      <version>1.2.1.1</version>
+      <scope>provided</scope>
+    </dependency>-->
+    <!--    <dependency>
+      <groupId>oauth.signpost</groupId>
+      <artifactId>signpost-commonshttp4</artifactId>
+      <version>1.2.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>oauth.signpost</groupId>
+      <artifactId>signpost-core</artifactId>
+      <version>1.2.1.1</version>
+      <scope>provided</scope>
+    </dependency>-->
+    <!--    <dependency>
+      <groupId>org.apache.james</groupId>
+      <artifactId>apache-mime4j</artifactId>
+      <version>0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>4.0.3</version>
+    </dependency>-->
+  </dependencies>
+  <build>
+    <!--<finalName>${project.artifactId}</finalName>-->
+    <pluginManagement>
+      <plugins>
+
+<!--        <plugin>
+          <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+          <artifactId>android-maven-plugin</artifactId>
+          <configuration>
+            <sdk>
+              <platform>3</platform>
+              <path>/usr/share/android-sdk-linux_x86</path>
+            </sdk>
+            <emulator>
+              <avd>16</avd>
+            </emulator>
+            <deleteConflictingFiles>true</deleteConflictingFiles>
+            <undeployBeforeDeploy>true</undeployBeforeDeploy>
+            <sign>
+              <debug>false</debug>
+            </sign>
+          </configuration>
+          <extensions>true</extensions>
+        </plugin>-->
+
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.4.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.1</version>
+          <configuration>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.0-beta-1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-scm-plugin</artifactId>
+          <version>1.3</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.4.3</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>1.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+<!--      <plugin>
+        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+        <artifactId>android-maven-plugin</artifactId>
+        <configuration>
+          <sdk>
+            <platform>3</platform>
+          </sdk>
+          <emulator>
+            <avd>16</avd>
+          </emulator>
+          <deleteConflictingFiles>true</deleteConflictingFiles>
+          <undeployBeforeDeploy>true</undeployBeforeDeploy>
+        </configuration>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>startemulator</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>emulator-start</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>-->
+
+      <plugin>
+        <inherited>false</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <tasks>
+            <ant/>
+          </tasks>
+        </configuration>
+      </plugin>
+      <!--      <plugin>
+                 Sets the AndroidManifest.xml Version Name to the projects version number 
+        <groupId>org.codehaus.groovy.maven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <source>
+                                project.modules.each {
+                                    try {
+                                        def manifestFile = new File("${it}/AndroidManifest.xml")
+                                        def ns = new groovy.xml.Namespace(
+                                            "http://schemas.android.com/apk/res/android", "ns")
+                                        def parser = new groovy.util.XmlParser(false, true)
+                                        def rootNode = parser.parse(manifestFile)
+                                        def attributes = rootNode.attributes()
+                                        attributes[ns.versionName] = "${project.version}"
+                                        def writer = new groovy.io.GroovyPrintWriter(manifestFile)
+                                        writer.println('&lt;?xml version="1.0" encoding="UTF-8"?&gt;')
+                                        def xmlWriter = new groovy.util.XmlNodePrinter(writer)
+                                        xmlWriter.setPreserveWhitespace(false)
+                                        xmlWriter.setNamespaceAware(true)
+                                        xmlWriter.print(rootNode)
+                                    } catch (FileNotFoundException e)
+                                    {
+                                        println('No AndroidManifest.xml file found. Skipping version update.')
+                                        println('Probably not an Android project, but a library.')
+                                        println('Skipping version update.')
+                                    }
+                                }
+              </source>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jarsigner-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>signing</id>
+            <goals>
+              <goal>sign</goal>
+              <goal>verify</goal>
+            </goals>
+            <phase>package</phase>
+            <inherited>true</inherited>
+            <configuration>
+              <removeExistingSignatures>true</removeExistingSignatures>
+              <archiveDirectory/>
+              <includes>
+                <include>${project.build.directory}/${project.artifactId}.apk</include>
+              </includes>
+              <keystore>${sign.keystore}</keystore>
+              <alias>${sign.alias}</alias>
+              <storepass>${sign.storepass}</storepass>
+              <keypass>${sign.keypass}</keypass>
+              <verbose>true</verbose>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <plugin>
+        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+        <artifactId>maven-android-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <sign>
+            <debug>false</debug>
+          </sign>
+          <zipalign>
+            <verbose>true</verbose>
+            <inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
+            <outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk
+            </outputApk>
+          </zipalign>
+        </configuration>
+        <executions>
+          <execution>
+            <id>alignApk</id>
+            <phase>package</phase>
+            <goals>
+              <goal>zipalign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

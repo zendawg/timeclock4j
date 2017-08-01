@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 1. Introduction</title>
+
+<meta name="description" content="timeclockj (1.0.0): 1. Introduction">
+<meta name="keywords" content="timeclockj (1.0.0): 1. Introduction">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Introduction"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="index.html#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Introduction-1"></a>
+<h1 class="chapter">1. Introduction</h1>
+
+<p><code>timeclockj</code> is a desktop and mobile phone application used
+to track time spent on different projects, both personal, business or
+leisure. Keeping track of projects means you can produce reports
+against them, and tally the hours you&rsquo;ve spent over days, weeks and
+months and see when you&rsquo;re most active.
+</p>
+<p>The mobile Android version of <code>timeclockj</code> uses Dropbox
+to syncronise files between your mobile and desktop. By doing this, all devices
+can access and use the same <code>timeclock</code> file. Mobile
+devices use <em>push</em> and <em>pull</em> commands to sync their mobile
+devices directly with Dropbox.
+</p>
+<p><code>timeclockj</code> provides libraries and tools for reading,
+viewing and writing <small>GNU</small> <code>emacs</code> mode <code>timeclock</code> files.
+<small>GNU</small> <code>emacs</code> &quot;&hellip;is an extensible, customizable text editor&quot;
+<a name="DOCF1" href="timeclockj_fot.html#FOOT1">(1)</a> that contains a mode -
+known as <code>timeclock</code> mode - for clocking-in and -out of projects.
+It is this mode for <small>GNU</small> <code>emacs</code> that is the inspiration
+for <code>timeclockj</code>.
+</p>
+<p>Command-line tools are provided, as is a desktop UI that sits in the
+operating system tray (sometimes called a Task Bar), and a mobile Android
+version. <code>timeclockj</code> is <i>not</i> a <code>timeclock</code> clone - it has different
+commands, different options but the end result is the same -
+manipulating <code>timeclock</code> files.
+</p>
+<p>A clock in line starts with an <code>i</code> character, a space, a date of the format 
+<code>yyyy/MM/dd HH:mm:ss</code>, and an optional string denoting a project. No project
+implies the default (no-name) project is being clocked-in. A clock-out line starts
+with a <code>o</code> character, date and time (using the format specified for clock-ins)
+with an optional string denoting a description for the clock-out.
+</p>
+<p>Here are some examples of clock lines from a <code>timeclock</code> file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">i 2010/10/05 13:28:57 Gym
+o 2010/10/05 14:57:04
+i 2010/10/05 18:29:36 Spanish Course
+o 2010/10/05 20:32:14 Verbs, revised shopping
+i 2010/10/06 09:15:22
+o 2010/10/06 12:09:58
+</pre></td></tr></table>
+
+<p>Line one shows the <em>Gym</em> project being clocked-in at almost 1:30pm,
+and clocked-out at nearly 3pm (line two). <em>Spanish Course</em> begins at almost
+6:30pm (line three), and is finished by 8:30pm line four). Finally, on lines
+five and six, the next day from 9:15am to 12:09pm, the default (no-name)
+project is clocked. In the case of the <em>Gym</em> and default project, no description
+is giving when clocking-out. With the <em>Spanish Course</em> project, the description
+<em>Verbs, revised shopping</em> is given.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="index.html#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

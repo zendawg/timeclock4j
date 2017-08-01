@@ -1,0 +1,317 @@
+@node Downloading and Installing
+@chapter Downloading and Installing
+
+@menu
+* Downloading::
+* Installing and System Tray Integration::
+@end menu
+
+@node Downloading
+@section Downloading
+
+@command{timeclockj} can be downloaded from SourceForge. The desktop UI application
+@file{.jar} file installer is available at the project main page as a download:
+
+@url{https://sourceforge.net/projects/timeclockj/}
+
+Optionally, to view all files available for download (including documentation), visit:
+
+@url{https://sourceforge.net/projects/timeclockj/files/timeclockj-1.1}
+
+All operating systems can download the @file{.jar} installer; optionally
+a @file{.exe} installer is also provided for Windows users.
+
+Android @command{timeclockj} will be available soon from the Google Android store.
+
+@node Installing and System Tray Integration
+@section Installing and System Tray Integration
+
+@menu
+* Installation - all platforms::
+* Windows::
+* Linux::
+* Mac::
+@end menu
+
+@node Installation - all platforms
+@subsection Installation - all platforms
+
+This section deals with installing @command{timeclockj} and setting it up as
+an application running in the system tray as well as a command-line
+tool. Since the installer is cross-platform, the following instructions
+are suitable for all operating systems.
+
+A Java Runtime Environment (JRE) of 1.5 or higher is required to install
+@command{timeclockj}.
+
+Two install files are available: @file{timeclockj-installer-1.1-alpha.exe}
+specifically for Windows, and @file{timeclockj-installer-1.1-alpha.jar}
+for any operating system (including Windows).
+
+For Windows, double-click the @file{timeclockj-installer-1.1-alpha.exe}
+file to begin installation. For @file{timeclockj-installer-1.1-alpha.jar},
+ensure that the
+file is executable and that a helper application (JRE) is associated
+with it and then double-click the jar file. The jar file can also be
+executed from the command line by changing directory to where the downloaded
+@file{.jar} file is located and running:
+
+@example
+java -jar timeclockj-installer-1.1-alpha.jar
+@end example
+
+Once running, the installer introduction screen will be displayed:
+
+@image{images/install-screen-01,4in,}
+
+Select @command{Next} to begin installation. The license screen
+will be displayed:
+
+@image{images/install-screen-02,4in,}
+
+Enter your choice to accept the software license agreement and
+select @command{Next} if proceeding with installation.
+
+The next screen prompts you to select which packs to install:
+
+@image{images/install-screen-03,4in,}
+
+Several packs are available:
+
+@itemize
+
+@item
+@emph{Command-Line Tools} contains all tools and libraries necessary to be
+able to run @command{timeclockj} as a command-line tool;
+
+@item
+@emph{PDF Documentation} contains @sc{pdf} help documentation
+
+@item
+@emph{HTML Documentation} contains a single-page @sc{html} help file; and
+
+@item
+@emph{Desktop UI} contains the files necessary to run @command{timeclockj} as a
+graphical tool from the system tray/task bar.
+
+@end itemize
+
+Ensure at least one of the checkboxes is selected, then select @command{Next}.
+
+Having selected the packs you wish to install, you are promted to enter
+an installation directory:
+
+@image{images/install-screen-04,4in,}
+
+Either accept the default or select @command{Browse}
+to enter a new location. Select @command{Next} when ready to
+proceed with installation. The next screen shows installation
+progress; select @command{Next} and the final installation screen
+will be displayed:
+
+@image{images/install-screen-06,4in,}
+
+Select @command{Done} to quit. In order to be able to execute commands
+(tools or UI) from the command line, you must set the path for the
+operating system you're running, and (if necessary) set @command{timeclockj}
+as a startup application. This can be done for several operating systems:
+@ref{Windows}, @ref{Linux} and @ref{Mac}.
+
+@node Windows
+@subsection Windows
+
+@menu
+* Windows PATH::
+* Windows Startup::
+@end menu
+
+@node Windows PATH
+@subsubsection Windows PATH
+
+If you would like to be able to run @command{timeclockj} from the command-line,
+edit the Windows @code{PATH} variable. To do this, perform the following
+steps:
+
+@enumerate
+
+@item
+Open the Windows @emph{Control Panel}; on Windows XP, this can be done by
+selecting @emph{Start}, then choose @emph{Control Panel};
+
+@item
+Double-click the @emph{System} icon;
+
+@item
+Select the @emph{Advanced} tab;
+
+@item
+Click the @emph{Environment Variables} button at the bottom of the tab;
+
+@item
+In the @emph{System variables} box, select the @emph{PATH} variable,
+then select @emph{Edit};
+
+@item
+For the @emph{Variable path}, add to the end of the line a semi-colon,
+followed by @code{[install-dir]\[component]\bin}, where @emph{[install-dir]}
+is the directory where @command{timeclockj} was installed to, and
+@emph{[component]} is one of @code{tools} or @code{ui}. If you add tools,
+your line would look as follows (after being appended to the line prior
+to editing), assuming @emph{[install-dir]} is @file{C:\Program Files\timeclock}:
+
+@example
+C:\Program Files\timeclock\tools\bin
+@end example
+
+To add the UI component, append another semi-colon and add
+@code{C:\Program Files\timeclock\ui\bin} to the path.
+
+@end enumerate
+
+@node Windows Startup
+@subsubsection Windows Startup
+
+This section assumes the UI component is installed. To ensure @command{timeclockj}
+starts when you first log in, perform the following steps:
+
+@enumerate
+
+@item
+Using Windows explorer, locate the directory where @command{timeclockj} was installed to;
+
+@item
+Locate and open for editing the file @file{ui\bin\timeclockj-ui.bat};
+
+@item
+Right-click on the file and select @emph{Create Shortcut}. A shortcut will be created
+in the same directory;
+
+@item
+Right-click on the newly created shortcut and select @emph{Cut};
+
+@item
+Locate the directory:
+
+@file{C:\Documents and Settings\[user]\Start Menu\Programs\Startup}
+
+using Windows explorer where @emph{[user]} is the user name logged in to Windows;
+
+@item
+Right-click in the directory and select @emph{Paste};
+
+@item
+Log out and the login again. @command{timeclockj} should now be sitting in the
+Task Bar.
+
+@end enumerate
+
+If this loads @command{timeclockj} but leaves a console (DOS prompt) window
+open, edit the file @file{timeclockj-gui.bat} in the @file{ui\bin}
+folder, and locate the line:
+
+@example
+if "%JAVACMD%"=="" set JAVACMD=javaw
+@end example
+
+If @command{JAVACMD} is @code{java} instead of @code{javaw},
+change it to @code{javaw}.
+
+Then locate the line where @command{timeclockj} is ran from - 
+it should start like so:
+
+@example
+start %JAVACMD% %JAVA_OPTS% %EXTRA_JVM_ARGUMENTS%
+@end example
+
+However, if the line does not start with the text @code{start} (as in the
+above example), change it so that it does. Log out, then login again.
+
+If this still does not work, see @ref{Help and Contribution}.
+
+@node Linux
+@subsection Linux
+
+@command{timeclockj} documentation has only been written for the system
+tray on Ubuntu Linux (Lucid). If you use a different version and would
+like to add documentation how you started @command{timeclockj} as
+a startup application, see @ref{Help and Contribution}.
+
+@menu
+* Linux PATH::
+* Linux Startup::
+@end menu
+
+@node Linux PATH
+@subsubsection Linux PATH
+
+You must first edit the system @command{PATH} variable such that @command{timeclockj}
+will be available as an executable. The following commands can either
+be run from a shell, or entered into the users @file{.bashrc} file:
+
+To make the @command{timeclockj} tools available for execution, run
+
+@example
+timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/tools/bin
+export $PATH
+@end example
+
+@dots{}where @emph{[install-dir]} is the directory where @command{timeclockj}
+was installed to.
+
+To make the @command{timeclockj} desktop UI available for execution, run
+
+@example
+timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/ui/bin
+export $PATH
+@end example
+
+@dots{}where @emph{[install-dir]} is the directory where @command{timeclockj}
+was installed to.
+
+@node Linux Startup
+@subsubsection Linux Startup
+
+To install @command{timeclockj} as a system tray application, follow these steps:
+
+@enumerate
+
+@item
+Select @code{System} -> @code{Preferences} -> @code{Startup Applications}
+
+@item
+In the @code{Startup Programs} tab, select @code{Add}
+
+@item
+In the @code{Add Startup Program} dialog, Enter the name as @emph{timeclockj},
+then select @code{Browse} for the @code{Command} field. Locate the installation
+directory where @command{timeclockj} was installed to, locate the @file{ui/bin} directory
+and select the @file{timeclockj-gui} file. Add a comment in the comment field
+if required. When done, select @code{Add}
+
+@item
+Select @code{Close} when complete. Next time you log into your session
+on Ubuntu Linux, @command{timeclockj} will be available as an icon in the
+system tray area.
+
+@end enumerate
+
+@node Mac
+@subsection Mac
+
+@menu
+* Mac PATH::
+* Mac Startup::
+@end menu
+
+@node Mac PATH
+@subsubsection Mac PATH
+
+TODO. See @ref{Help and Contribution} if you can help with this section.
+
+@node Mac Startup
+@subsubsection Mac Startup
+
+TODO. See @ref{Help and Contribution} if you can help with this section.
+

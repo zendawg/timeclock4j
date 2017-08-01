@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 4.3 Clocking Out With the UI</title>
+
+<meta name="description" content="timeclockj (1.0.0): 4.3 Clocking Out With the UI">
+<meta name="keywords" content="timeclockj (1.0.0): 4.3 Clocking Out With the UI">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Clocking-Out-With-the-UI"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Clocking-In-With-the-UI.html#Clocking-In-With-the-UI" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports-With-the-UI.html#Generating-Reports-With-the-UI" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-With-the-UI-1"></a>
+<h2 class="section">4.3 Clocking Out With the UI</h2>
+
+<p>To clock out of the current project, select <code>Clock Out '[projectName]'</code>
+where <em>projectName</em> is the name of the currently clocked-in project.
+</p>
+<p>The currently clocked-in project is always displayed as a clock-out option
+as the first option in the popup menu from the tray icon. In the following
+diagram, the <em>Documentation</em> project is currently clocked-in,
+and is therefore available to be clocked-out with the first menu item:
+</p>
+<img src="images/timeclockj-clock-out.png" alt="images/timeclockj-clock-out">
+
+<p>Note that two clock-out options are given; the first is for clocking-out
+without a description. This clocks-out the current project.
+The second option allows a description, date and time to be
+added, and an input screen will be shown allowing text to be entered
+against the clocked-out time period:
+</p>
+<img src="images/timeclockj-clockout-with-options.png" alt="images/timeclockj-clockout-with-options">
+
+<p>Several options are available, each with a checkbox. If the checkbox is not
+selected when the user selects <em>OK</em>, that field is not used as part
+of the clock-out. The options are as follows:
+</p>
+<ul>
+<li> date checkbox with date field; selecting the checkbox allows a user
+to enter a date in the format <em>yyyy-mm-dd</em>.
+
+</li><li> time checkbox with time field; selecting the checkbox allows a user
+to enter a time in the format <em>hh:mm</em>.
+
+</li><li> description detailing the cause for clocking-out.
+
+</li></ul>
+
+<p>Losing focus of any date or time field (by selecting another UI field) will
+cause the newly entered date/time to be parsed, either in the format
+<em>yyyy-mm-dd</em> (for dates) and <em>hh:mm</em> (for times). Failure to enter
+a correct date or time will result in an error dialog being displayed,
+and the field will become disabled and the checkbox for the date or time will
+become unselected.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Clocking-In-With-the-UI.html#Clocking-In-With-the-UI" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Generating-Reports-With-the-UI.html#Generating-Reports-With-the-UI" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-the-Desktop.html#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

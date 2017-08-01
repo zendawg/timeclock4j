@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 6.3 Android Syncronisation</title>
+
+<meta name="description" content="timeclockj (1.0.0): 6.3 Android Syncronisation">
+<meta name="keywords" content="timeclockj (1.0.0): 6.3 Android Syncronisation">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Android-Syncronisation"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Desktop-UI-Syncronisation.html#Desktop-UI-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Android-Syncronisation-1"></a>
+<h2 class="section">6.3 Android Syncronisation</h2>
+
+<p>By default, Dropbox syncing is disabled on startup. This applicaiton
+<em>only</em> reads and writes to the name of the file that you specify
+in the Android Dropbox preferences. To enable Drobpox
+syncing, press the setup button on your phone when on the main screen,
+select <code>Setup</code>, then choose <code>Dropbox File Storage</code>. The
+following configuration screen will appear:
+</p>
+<img src="images/android-setup-dropbox.png" alt="images/android-setup-dropbox">
+
+<p>The configuration options are as follows:
+</p>
+<ul>
+<li>
+<em>Dropbox Directory</em>: By default this is blank, meaning
+the <code>timeclock</code> file will be saved to the root of your
+Dropbox storage area. Separate directory names with
+a forward slash (&lsquo;/&rsquo;). The case of the characters
+of the directory names is important - if you have a directory named
+&lsquo;<tt>Apps/myTimeclock</tt>&rsquo; and wish to store <code>timeclock</code> data there,
+entering &lsquo;<tt>apps/myTimeclock</tt>&rsquo; will fail - because the case of the
+characters is different in both cases (in this case the first character).
+
+<p>This is the directory that the file exists on the user&rsquo;s Dropbox account - do not get it confused with <em>Timeclock Directory</em> in <a href="Configuring-Android.html#Configuring-Android">Configuring Android</a>, since that is used for where the file is stored locally on the user&rsquo;s SD card. By contrast, <em>Dropbox Directory</em> is the directory that the file resides within the user&rsquo;s Dropbox account.
+</p>
+</li></ul>
+
+<p>The name of the file written is the name specified in your local (SD card)
+storage - see <a href="Configuring-Android.html#Configuring-Android">Configuring Android</a>. Thus, if the local file
+was specified as a file named &lsquo;<tt>myTickClock.txt</tt>&rsquo;, performing 
+syncronisation with Dropbox will result in that file being pushed
+or pulled.
+</p>
+<p>Once the <em>Syncronise with Dropbox</em> checkbox is checked, the
+Dropbox sync tab will become available as the far-right tab:
+</p>
+<img src="images/android-basic-with-dropbox.png" alt="images/android-basic-with-dropbox">
+
+<p>Pushing this button will result in the Dropbox screen being displayed:
+</p>
+<img src="images/android-dropbox-pre-login.png" alt="images/android-dropbox-pre-login">
+
+<p>First time use will immediately load the authentication page via the default browser:
+</p>
+<img src="images/android-dropbox-enter-login-details.png" alt="images/android-dropbox-enter-login-details">
+
+<p>Now enter your Dropbox username (typically an email address) and your Dropbox password, and verification will occur. Note that the Android <code>TimeClockJ</code> application does not store these details since all authentication is performed by the system browser. Select <em>Sign in</em> to sign in. Once complete, the following screen will appear - select whichever is most appropriate to you:
+</p>
+<img src="images/android-dropbox-confirm-details.png" alt="images/android-dropbox-confirm-details">
+
+<p>You&rsquo;ll now be presented with the option to allow the <code>TimeClockJ</code> application access to read and write to your timeclock file:
+</p>
+<img src="images/android-dropbox-login-first-time.png" alt="images/android-dropbox-login-first-time">
+
+<p>Selecting <em>Allow</em> will return you to the <em>Sync</em> tab, where the <em>Push</em> and <em>Pull</em> buttons will be enabled. The login button will now change to a logout button - this forces the application to re-authenticate every time, and should not really be required. If you do not logout, it offers the convenience of always being able to push and pull your <em>timeclock</em> file when you start the application afresh every time. The <em>Push</em> and <em>Pull</em> buttons work as follows:
+</p>
+<ul>
+<li>
+Use <em>Push</em> to push your locally stored <code>timeclock</code> file
+to your remote Dropbox account. This will overwrite the remote file
+(if it exists) or create it if it does not exist;
+
+</li><li>
+Use <em>Pull</em> to pull the remote file from Dropbox to your locally
+stored file. This will overwrite your local file with the version
+stored in your Dropbox account.
+
+</li></ul>
+
+<p>An error will occur if there were any problems syncing; if this is the
+case, you will have to perform the operation again. Each time you perform
+a push or a pull, both buttons will become disabled until the sync has finished.
+</p>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Desktop-UI-Syncronisation.html#Desktop-UI-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

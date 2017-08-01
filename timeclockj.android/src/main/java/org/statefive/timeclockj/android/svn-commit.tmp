@@ -1,0 +1,4 @@
+Changed to clear keys (for older versions of Dropbox) if authentication fails.
+--This line, and those below, will be ignored--
+
+M    DropboxAuthActivity.java

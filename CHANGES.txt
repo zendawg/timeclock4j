@@ -1,0 +1,32 @@
+1.1-alpha (Android, Desktop UI & CLI), Release April 1st, 2013
+
+	Several improvements:
+
+	- improved user experience and faster startup time using threads (Android);
+	- project list now ordered alphabetically (non case-sensitive);
+	- removed bug that added the project to the end of the list for each clock out (Desktop UI);
+	- new system tray icon (Desktop UI);
+	- creation of reports specified by start/end date (Android, CLI, Desktop);
+	- help pages now render correctly (missing spaces on certain lines previously) (Android);
+	- new Dropbox API (1.1) integration
+
+1.0.0-alpha (Android), Release 6th September 2011:
+
+	- Android version released, with Dropbox syncing
+
+1.0.0-alpha (Desktop UI, CLI), Release December 2nd, 2010:
+
+	Initial release. Current features:
+
+	- compatible with emacs mode timeclock files;
+	- clock-in and -out of projects;
+	- view HTML and text reports of hourly totals for projects;
+	- desktop version runs as a system tray (`Task Bar') application;
+	- HTML and PDF help documents;
+	- Dropbox synchronisation
+
+	Planned features:
+
+	- Android version available soon;
+	- desktop UI preferences dialog (currently configured via CLI)
+

@@ -1,0 +1,137 @@
+@node Dropbox Syncronisation
+@chapter Dropbox Syncronisation
+
+Dropbox (@url{http://dropbox.com/}) enables storage of personal files via
+a several different interfaces and can be used to ensure you can sync
+between @command{timeclock} files stored on your personal computer
+and files stored on mobile devices.
+
+This section details how to achieve this using the desktop UI
+and Android.
+
+@menu
+* GNU Emacs Syncronisation::
+* Desktop UI Syncronisation::
+* Android Syncronisation::
+@end menu
+
+@node GNU Emacs Syncronisation
+@section GNU Emacs Syncronisation
+
+All you need to do with @sc{gnu} @command{emacs} is set the file it uses
+to clock times to a point to a Dropbox directory containing your
+@command{timeclock} file. How to change the file name variable
+is already documented at the following @sc{url}:
+
+@url{http://www.delorie.com/gnu/docs/emacs/emacs_437.html}
+
+@node Desktop UI Syncronisation
+@section Desktop UI Syncronisation
+
+To enable syncing from the desktop, you need to ensure three
+things are done:
+
+@itemize @bullet
+
+@item
+Dropbox is installed on your computer;
+
+@item
+the file used by @command{timeclockj} is a file in your Dropbox
+storage area - in other words, @code{--file} is specified
+to point to a file in your Dropbox storage (see @ref{UI Configuration}).
+
+@item
+ensure that the option to reload on file change is enabled
+(see @ref{UI Configuration}).
+
+@end itemize
+
+For example, imagine a user has a @command{timeclock} file named
+@file{.timelog} in a directory named @file{C:/Apps/timeclockj}; then
+the startup command for running the desktop UI would be:
+
+@example
+timeclockj-gui --file C:/Apps/timeclockj/.timelog --reload-on-change
+@end example
+
+Everytime a clock-in or -out occurs, changes are detected automatically
+by Dropbox and will then be available to sync with other devices.
+
+@node Android Syncronisation
+@section Android Syncronisation
+
+By default, Dropbox syncing is disabled on startup. This applicaiton
+@emph{only} reads and writes to the name of the file that you specify
+in the Android Dropbox preferences. To enable Drobpox
+syncing, press the setup button on your phone when on the main screen,
+select @code{Setup}, then choose @code{Dropbox File Storage}. The
+following configuration screen will appear:
+
+@image{images/android-setup-dropbox,,3in}
+
+The configuration options are as follows:
+
+@itemize @bullet
+
+@item
+@emph{Dropbox Directory}: By default this is blank, meaning
+the @command{timeclock} file will be saved to the root of your
+Dropbox storage area. Separate directory names with
+a forward slash (`/'). The case of the characters
+of the directory names is important - if you have a directory named
+@file{Apps/myTimeclock} and wish to store @command{timeclock} data there,
+entering @file{apps/myTimeclock} will fail - because the case of the
+characters is different in both cases (in this case the first character).
+
+This is the directory that the file exists on the user's Dropbox account - do not get it confused with @emph{Timeclock Directory} in @ref{Configuring Android}, since that is used for where the file is stored locally on the user's SD card. By contrast, @emph{Dropbox Directory} is the directory that the file resides within the user's Dropbox account.
+
+@end itemize
+
+The name of the file written is the name specified in your local (SD card)
+storage - see @ref{Configuring Android}. Thus, if the local file
+was specified as a file named @file{myTickClock.txt}, performing 
+syncronisation with Dropbox will result in that file being pushed
+or pulled.
+
+Once the @emph{Syncronise with Dropbox} checkbox is checked, the
+Dropbox sync tab will become available as the far-right tab:
+
+@image{images/android-basic-with-dropbox,,3in}
+
+Pushing this button will result in the Dropbox screen being displayed:
+
+@image{images/android-dropbox-pre-login,,3in}
+
+First time use will immediately load the authentication page via the default browser:
+
+@image{images/android-dropbox-enter-login-details,,3in}
+
+Now enter your Dropbox username (typically an email address) and your Dropbox password, and verification will occur. Note that the Android @code{TimeClockJ} application does not store these details since all authentication is performed by the system browser. Select @emph{Sign in} to sign in. Once complete, the following screen will appear - select whichever is most appropriate to you:
+
+@image{images/android-dropbox-confirm-details,,3in}
+
+You'll now be presented with the option to allow the @code{TimeClockJ} application access to read and write to your timeclock file:
+
+@image{images/android-dropbox-login-first-time,,3in}
+
+Selecting @emph{Allow} will return you to the @emph{Sync} tab, where the @emph{Push} and @emph{Pull} buttons will be enabled. The login button will now change to a logout button - this forces the application to re-authenticate every time, and should not really be required. If you do not logout, it offers the convenience of always being able to push and pull your @emph{timeclock} file when you start the application afresh every time. The @emph{Push} and @emph{Pull} buttons work as follows:
+
+@itemize
+
+@item
+Use @emph{Push} to push your locally stored @command{timeclock} file
+to your remote Dropbox account. This will overwrite the remote file
+(if it exists) or create it if it does not exist;
+
+@item
+Use @emph{Pull} to pull the remote file from Dropbox to your locally
+stored file. This will overwrite your local file with the version
+stored in your Dropbox account.
+
+@end itemize
+
+An error will occur if there were any problems syncing; if this is the
+case, you will have to perform the operation again. Each time you perform
+a push or a pull, both buttons will become disabled until the sync has finished.
+

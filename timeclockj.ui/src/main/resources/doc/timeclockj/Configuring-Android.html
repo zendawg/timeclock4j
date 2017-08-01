@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 5.1 Configuring Android</title>
+
+<meta name="description" content="timeclockj (1.0.0): 5.1 Configuring Android">
+<meta name="keywords" content="timeclockj (1.0.0): 5.1 Configuring Android">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Configuring-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Clocking-In-and-Out-With-Android.html#Clocking-In-and-Out-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Configuring-Android-1"></a>
+<h2 class="section">5.1 Configuring Android</h2>
+
+<p>Before using Android, decide how you wish to configure your basic settings. By default, <code>timeclockj</code> stores it&rsquo;s data according to the following rules:
+</p>
+<ul>
+<li> All data is stored on the SD card. This is so that the &lsquo;<tt>.timelog</tt>&rsquo; file is readable and editable by users, and that the reports generated are freely accessible;
+
+</li><li> the main file used for clocking-in and -out, is stored in the root of the SD card; the default name of the clock file is &lsquo;<tt>.timelog</tt>&rsquo;; if there is no such file, it is created when first clocking in;
+
+</li><li> reports are generated in the directory &lsquo;<tt>.timeclockj-reports</tt>&rsquo;
+
+</li></ul>
+
+<p><code>timeclockj</code> can be configured by pressing the setup button when viewing the <em>Clock</em>, <em>Report</em> or <em>Info</em> tabs, then selecting the phone&rsquo;s <em>Menu</em> button. Two options will be presented, <em>Local File Storage</em> and <em>Dropbox File Storage</em>:
+</p>
+<img src="images/android-setup.png" alt="images/android-setup">
+
+<p>Dropbox configuration is covered in <a href="Android-Syncronisation.html#Android-Syncronisation">Android Syncronisation</a>. Use <em>Local File Storage</em> to change the default settings for your time clock file and report generation options. Selecting <em>Local File Storage</em> will present the following screen:
+</p>
+<img src="images/android-setup-local.png" alt="images/android-setup-local">
+
+<p>Unchecking the <em>Store data on SD Card</em> option will disable all options for this screen and will save the <code>timeclock</code> data in the private application area. There are two drawbacks to not saving data directly to the SD card: Dropbox synchronisation will not work, and reports cannot be generated to disk (they can be generated, just not saved).
+</p>
+<p>The options when storing data to the SD card are:
+</p>
+<ul>
+<li>
+<em>Timeclock Directory</em>: By default this is blank, meaning the <code>timeclock</code> file will be saved to the root of the SD card. If a directory name is given, it must already exist otherwise an error will occur. Separate directory names with a forward slash (&lsquo;<tt>/</tt>&rsquo;). The case of the characters of the directory names is important - if you have a directory named &lsquo;<tt>Apps/myTimeclock</tt>&rsquo; and wish to store <code>timeclock</code> data there, entering &lsquo;<tt>apps/myTimeclock</tt>&rsquo; will fail - because the case of the characters is different in both cases (in this case the first character).
+
+</li><li>
+<em>Timeclock File</em>: The name of the file to save. By default this is &lsquo;<tt>.timelog</tt>&rsquo;. If the specified file does not exist on startup, it is created providing there are no permission issues. The file is saved in the <em>Timeclock Directory</em>, if the user has specified the directory and the directory exists, otherwise the file is saved on the root of the SD card (unless the user decides to store the <code>timeclock</code> file within the private application area).
+
+</li><li>
+<em>TimeClock Reports</em>:
+The name of the directory to write reports to relative to the root of the SD card. By default this is &lsquo;<tt>timeclockj-reports</tt>&rsquo;, but does not need to exist - it is created for you. Note that if you wish to store the <code>timeclock</code> file in the same directory as your reports, ensure that the <em>TimeClock Reports</em> directory is the same as the <em>TimeClock Directory</em> setting.
+
+</li></ul>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Clocking-In-and-Out-With-Android.html#Clocking-In-and-Out-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj-for-Android.html#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Dropbox-Syncronisation.html#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

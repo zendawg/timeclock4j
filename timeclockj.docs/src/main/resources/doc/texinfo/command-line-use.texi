@@ -1,0 +1,231 @@
+@node Command Line Use
+@chapter Command Line Use
+
+The @command{timeclockj} tool is used for manipulating @command{timeclock} files.
+The basic syntax for command-line use is:
+
+@example
+timeclockj [command] [options]
+@end example
+
+@dots{}where @emph{[command]} is one of @command{in} (for clocking in),
+@command{out} (for clocking out) or @command{report} for generating reports.
+
+Supplying the command is optional - see @ref{Common Command Line Options} for
+command-line options that do not require any a command to be executed.
+
+@menu
+* Common Command Line Options::
+* Clocking In::
+* Clocking Out::
+* Generating Reports::
+@end menu
+
+@node Common Command Line Options
+@section Common Command Line Options
+
+All tools share command command line options. These options are as follows:
+
+@itemize @bullet
+@item
+@code{-f,--file <arg>} Set the timeclock file to use. If no file is
+                      specified, @file{.timelog} is read from the user's home directory. If no such
+                      file exists, it is created.
+
+@item
+@code{-h,--help} Print help information then exit.
+
+@item 
+@code{-l,--list} Parse the @command{timeclock} file, list project names, then quit.
+
+@item 
+@code{-v,--version} Print version information, then quit.
+
+@item 
+@code{-c,--license} Print copyleft license information, then quit.
+
+@end itemize
+
+
+@node Clocking In
+@section Clocking In
+
+The @command{in} command is used to clock in. In addition to the
+options available given in @ref{Common Command Line Options},
+clocking-in has the following additional option:
+
+@itemize @bullet
+
+@item
+@code{-p,--project <arg>} Set the project to clock in with. The default
+                      (blank) project will be used if no project is specified. Specify projects
+                      with spaces in using quotes. For example, for a project named
+                      @emph{Floor Tiles}, the option would be @code{-p "Floor Tiles"}.
+
+@item
+@code{-s,--start-date <arg>} Specify the clock-in date (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+@end itemize
+
+Attempting to clock-in to a @command{timeclock} file that already contains
+a clock-in (without succeeding clock-out) will result in an error and the
+clock-in will fail. Otherwise, the file will be appended with the
+new clocked-in time and project name (if specified).
+
+To clock in to the default project, supply no arguments to the
+@command{in} command.
+Running without any arguments will produce the following output (dates will
+vary of course):
+
+@example
+@b{# timeclockj in}
+Clocked in: 2010/10/07 13:35:34
+@end example
+
+This clocks in to the default (no-name) project. An entry will be
+appended to the end of the @code{timeclock} file as follows:
+
+@example
+i 2010/10/07 13:35:34
+@end example
+
+Attempting to clock-in again will result in the following error:
+
+@example
+@b{# timeclockj in}
+You've already clocked in!
+@end example
+
+To clock in with a specific project, use the @code{-p} or @code{--project}
+option:
+
+@example
+@b{# timeclockj in --project shopping}
+Clocked in: 2010/10/07 13:40:38 (shopping)
+@end example
+
+An entry will be appended to the end of the @code{timeclock} file as follows:
+
+@example
+i 2010/10/07 13:40:38 shopping
+@end example
+
+For projects with spaces in the name, ensure the option is surrounded
+with quotes, thus:
+
+@example
+@b{timeclockj in --project "Spanish Course"}
+@end example
+
+@node Clocking Out
+@section Clocking Out
+
+The @command{out} command is used to clock out. In addition to the
+options available given in @ref{Common Command Line Options}, the
+@command{out} command also has the following option:
+
+@itemize @bullet
+
+@item
+@code{-d,--description <arg>} Set the reason for clocking out. A description is
+                      optional. Specify descriptions
+                      with spaces in using quotes. For example, for a description
+                      @emph{Had to leave meeting}, the option would be
+                      @code{-d "Had to leave meeting"}.
+
+@item
+@code{-e,--end-date <arg>} Specify the clock-out date (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+@end itemize
+
+Attempting to clock-out to a @command{timeclock} file that already contains
+a clock-out (without succeeding clock-in) will result in an error and the
+clock-out will fail. Otherwise, the file will be appended with the
+new clocked-out time and description (if specified).
+
+To clock out of the currently clocked-in project, supply no arguments
+to @code{timeclockj out}. Running without any arguments will produce
+the following output (dates will vary of course):
+
+@example
+@b{# timeclockj out}
+Clocked out: 2010/10/07 13:42:37
+@end example
+
+@dots{}produces the following output in the @command{timeclock} file:
+
+@example
+o 2010/10/07 13:42:37
+@end example
+
+Attempting to clock-out again will result in the following error:
+
+@example
+@b{# timeclockj out}
+You've already clocked out!
+@end example
+
+To clock-out with a specific description, use the @code{-d} or @code{--description}
+option:
+
+@example
+@b{# timeclockj out -d Quit}
+Clocked out: 2010/10/07 13:44:51
+@end example
+
+An entry will be appended to the end of the @code{timeclock} file as follows:
+
+@example
+o 2010/10/07 13:44:51 Quit
+@end example
+
+For descriptions containing spaces, ensure the option is surrounded
+with quotes, thus:
+
+@example
+@b{# timeclockj out --description "Had to leave early, work pending."}
+Clocked out: 2010/10/07 13:44:51
+@end example
+
+@node Generating Reports
+@section Generating Reports
+
+Reports against @command{timeclock} files can be made. The
+@command{report} command is used to print information
+about individual projects, or all projects in a file. In addition to
+the common command line options given in @ref{Common Command Line Options},
+@command{report} command also supports the following options:
+
+@itemize @bullet
+
+@item
+@code{-e,--end-date <arg>} Specify the end date. Clock periods after to this will not be included. (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+@item
+@code{-s,--start-date <arg>} Specify the start date. Clock periods prior to this will not be included. (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+@item
+@code{-p,--project <arg>} Print report for the specified project. The default
+                      (no-name) project is defined as "<default>", surrounded with quotes for
+                      report purposes.
+
+@item
+@code{-a,--all} Print reports for all projects.
+
+@item
+@code{-m,--html} Instead of outputing data in unmarked-up text, print
+the report in  HTML.
+
+@item
+@code{-o,--output <arg>} Instead of printing output to stdout, write to
+specified file. If the file already exists, it is over-written.
+
+@end itemize
+
+Use quotes to report a project name using the @code{-p} (or
+@code{--project} option that contains spaces:
+
+@code{timeclockj-generate-report -p "Test With Spaces"}
+
+@dots{}generates a report for the @emph{Test With Spaces} project.
+

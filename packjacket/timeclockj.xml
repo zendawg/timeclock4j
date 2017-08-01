@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<installation version="1.0">
+    <info>
+        <appname>TimeClockJ</appname>
+        <appversion>1.2-alpha</appversion>
+        <authors>
+            <author email="rich@statefive.org" name="Richard Zendawg"/>
+        </authors>
+        <url>http://www.statefive.org</url>
+        <uninstaller name="Uninstaller.jar" write="yes"/>
+        <requiresjdk>no</requiresjdk>
+        <writeinstallationinformation>yes</writeinstallationinformation>
+        <pack200/>
+        <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
+    </info>
+    <guiprefs height="480" resizable="no" width="640">
+        <modifier key="useFlags" value="yes"/>
+        <modifier key="langDisplayType" value="default"/>
+    </guiprefs>
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+    <panels>
+        <panel classname="CheckedHelloPanel"/>
+        <panel classname="PacksPanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="SimpleFinishPanel"/>
+    </panels>
+    <packs>
+        <pack name="PDF Documentation" preselected="yes" required="no">
+            <description>Contains PDF help documentation.</description>
+            <file override="update"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.docs/target/docs/pdf/timeclockj.pdf" targetdir="$INSTALL_PATH/docs/pdf"/>
+        </pack>
+        <pack name="HTML Documentation." preselected="yes" required="no">
+            <description>HTML single-page help documentation.</description>
+            <file override="update"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.docs/target/docs/single-page-html" targetdir="$INSTALL_PATH/docs/html"/>
+        </pack>
+        <pack name="TimeClockJ UI" preselected="yes" required="yes">
+            <description>System tray tool.</description>
+            <file override="true"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.ui/target/appassembler/bin" targetdir="$INSTALL_PATH/timeclockj-ui"/>
+            <file override="true"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.ui/target/appassembler/lib" targetdir="$INSTALL_PATH/timeclockj-ui"/>
+        </pack>
+        <pack name="Command-Line Tools" preselected="yes" required="no">
+            <description>Versatile CLI tools for clocking in and out and generating reports.</description>
+            <file override="true"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.tools/target/appassembler/bin" targetdir="$INSTALL_PATH/timeclockj-tools"/>
+            <file override="true"
+                src="/home/rich/Devel/org.statefive/java/timeclockj/timeclockj.tools/target/appassembler/lib" targetdir="$INSTALL_PATH/timeclockj-tools"/>
+        </pack>
+    </packs>
+</installation>

@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2010, Richard Meeking
+ -->
+<!-- Created on April 1, 2013 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.0.0): 2.2 Installing and System Tray Integration</title>
+
+<meta name="description" content="timeclockj (1.0.0): 2.2 Installing and System Tray Integration">
+<meta name="keywords" content="timeclockj (1.0.0): 2.2 Installing and System Tray Integration">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Installing-and-System-Tray-Integration"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="Downloading.html#Downloading" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installation-_002d-all-platforms" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Installing-and-System-Tray-Integration-1"></a>
+<h2 class="section">2.2 Installing and System Tray Integration</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Installation-_002d-all-platforms">2.2.1 Installation - all platforms</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Windows">2.2.2 Windows</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Linux">2.2.3 Linux</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Mac">2.2.4 Mac</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Installation-_002d-all-platforms"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Installation-_002d-all-platforms-1"></a>
+<h3 class="subsection">2.2.1 Installation - all platforms</h3>
+
+<p>This section deals with installing <code>timeclockj</code> and setting it up as
+an application running in the system tray as well as a command-line
+tool. Since the installer is cross-platform, the following instructions
+are suitable for all operating systems.
+</p>
+<p>A Java Runtime Environment (JRE) of 1.5 or higher is required to install
+<code>timeclockj</code>.
+</p>
+<p>Two install files are available: &lsquo;<tt>timeclockj-1.0.0-alpha-installer.exe</tt>&rsquo;
+specifically for Windows, and &lsquo;<tt>timeclockj-1.0.0-alpha-installer.jar</tt>&rsquo;
+for any operating system (including Windows).
+</p>
+<p>For Windows, double-click the &lsquo;<tt>timeclockj-1.0.0-alpha-installer.exe</tt>&rsquo;
+file to begin installation. For &lsquo;<tt>timeclockj-1.0.0-alpha-installer.jar</tt>&rsquo;,
+ensure that the
+file is executable and that a helper application (JRE) is associated
+with it and then double-click the jar file. The jar file can also be
+executed from the command line by changing directory to where the downloaded
+&lsquo;<tt>.jar</tt>&rsquo; file is located and running:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">java -jar timeclockj-1.0.0-alpha-installer.jar
+</pre></td></tr></table>
+
+<p>Once running, the installer introduction screen will be displayed:
+</p>
+<img src="images/install-screen-01.png" alt="images/install-screen-01">
+
+<p>Select <code>Next</code> to begin installation. The license screen
+will be displayed:
+</p>
+<img src="images/install-screen-02.png" alt="images/install-screen-02">
+
+<p>Enter your choice to accept the software license agreement and
+select <code>Next</code> if proceeding with installation.
+</p>
+<p>The next screen prompts you to select which packs to install:
+</p>
+<img src="images/install-screen-03.png" alt="images/install-screen-03">
+
+<p>Several packs are available:
+</p>
+<ul>
+<li>
+<em>Command-Line Tools</em> contains all tools and libraries necessary to be
+able to run <code>timeclockj</code> as a command-line tool;
+
+</li><li>
+<em>PDF Documentation</em> contains <small>PDF</small> help documentation
+
+</li><li>
+<em>HTML Documentation</em> contains a single-page <small>HTML</small> help file; and
+
+</li><li>
+<em>Desktop UI</em> contains the files necessary to run <code>timeclockj</code> as a
+graphical tool from the system tray/task bar.
+
+</li></ul>
+
+<p>Ensure at least one of the checkboxes is selected, then select <code>Next</code>.
+</p>
+<p>Having selected the packs you wish to install, you are promted to enter
+an installation directory:
+</p>
+<img src="images/install-screen-04.png" alt="images/install-screen-04">
+
+<p>Either accept the default or select <code>Browse</code>
+to enter a new location. Select <code>Next</code> when ready to
+proceed with installation. The next screen shows installation
+progress; select <code>Next</code> and the final installation screen
+will be displayed:
+</p>
+<img src="images/install-screen-06.png" alt="images/install-screen-06">
+
+<p>Select <code>Done</code> to quit. In order to be able to execute commands
+(tools or UI) from the command line, you must set the path for the
+operating system you&rsquo;re running, and (if necessary) set <code>timeclockj</code>
+as a startup application. This can be done for several operating systems:
+<a href="#Windows">Windows</a>, <a href="#Linux">Linux</a> and <a href="#Mac">Mac</a>.
+</p>
+<hr size="6">
+<a name="Windows"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Installation-_002d-all-platforms" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-1"></a>
+<h3 class="subsection">2.2.2 Windows</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Windows-PATH">2.2.2.1 Windows PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Windows-Startup">2.2.2.2 Windows Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Windows-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-PATH-1"></a>
+<h4 class="subsubsection">2.2.2.1 Windows PATH</h4>
+
+<p>If you would like to be able to run <code>timeclockj</code> from the command-line,
+edit the Windows <code>PATH</code> variable. To do this, perform the following
+steps:
+</p>
+<ol>
+<li>
+Open the Windows <em>Control Panel</em>; on Windows XP, this can be done by
+selecting <em>Start</em>, then choose <em>Control Panel</em>;
+
+</li><li>
+Double-click the <em>System</em> icon;
+
+</li><li>
+Select the <em>Advanced</em> tab;
+
+</li><li>
+Click the <em>Environment Variables</em> button at the bottom of the tab;
+
+</li><li>
+In the <em>System variables</em> box, select the <em>PATH</em> variable,
+then select <em>Edit</em>;
+
+</li><li>
+For the <em>Variable path</em>, add to the end of the line a semi-colon,
+followed by <code>[install-dir]\[component]\bin</code>, where <em>[install-dir]</em>
+is the directory where <code>timeclockj</code> was installed to, and
+<em>[component]</em> is one of <code>tools</code> or <code>ui</code>. If you add tools,
+your line would look as follows (after being appended to the line prior
+to editing), assuming <em>[install-dir]</em> is &lsquo;<tt>C:\Program Files\timeclock</tt>&rsquo;:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">C:\Program Files\timeclock\tools\bin
+</pre></td></tr></table>
+
+<p>To add the UI component, append another semi-colon and add
+<code>C:\Program Files\timeclock\ui\bin</code> to the path.
+</p>
+</li></ol>
+
+<hr size="6">
+<a name="Windows-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-Startup-1"></a>
+<h4 class="subsubsection">2.2.2.2 Windows Startup</h4>
+
+<p>This section assumes the UI component is installed. To ensure <code>timeclockj</code>
+starts when you first log in, perform the following steps:
+</p>
+<ol>
+<li>
+Using Windows explorer, locate the directory where <code>timeclockj</code> was installed to;
+
+</li><li>
+Locate and open for editing the file &lsquo;<tt>ui\bin\timeclockj-ui.bat</tt>&rsquo;;
+
+</li><li>
+Right-click on the file and select <em>Create Shortcut</em>. A shortcut will be created
+in the same directory;
+
+</li><li>
+Right-click on the newly created shortcut and select <em>Cut</em>;
+
+</li><li>
+Locate the directory:
+
+<p>&lsquo;<tt>C:\Documents and Settings\[user]\Start Menu\Programs\Startup</tt>&rsquo;
+</p>
+<p>using Windows explorer where <em>[user]</em> is the user name logged in to Windows;
+</p>
+</li><li>
+Right-click in the directory and select <em>Paste</em>;
+
+</li><li>
+Log out and the login again. <code>timeclockj</code> should now be sitting in the
+Task Bar.
+
+</li></ol>
+
+<p>If this loads <code>timeclockj</code> but leaves a console (DOS prompt) window
+open, edit the file &lsquo;<tt>timeclockj-gui.bat</tt>&rsquo; in the &lsquo;<tt>ui\bin</tt>&rsquo;
+folder, and locate the line:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if &quot;%JAVACMD%&quot;==&quot;&quot; set JAVACMD=javaw
+</pre></td></tr></table>
+
+<p>If <code>JAVACMD</code> is <code>java</code> instead of <code>javaw</code>,
+change it to <code>javaw</code>.
+</p>
+<p>Then locate the line where <code>timeclockj</code> is ran from - 
+it should start like so:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">start %JAVACMD% %JAVA_OPTS% %EXTRA_JVM_ARGUMENTS%
+</pre></td></tr></table>
+
+<p>However, if the line does not start with the text <code>start</code> (as in the
+above example), change it so that it does. Log out, then login again.
+</p>
+<p>If this still does not work, see <a href="Help-and-Contribution.html#Help-and-Contribution">Help and Contribution</a>.
+</p>
+<hr size="6">
+<a name="Linux"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows-Startup" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-1"></a>
+<h3 class="subsection">2.2.3 Linux</h3>
+
+<p><code>timeclockj</code> documentation has only been written for the system
+tray on Ubuntu Linux (Lucid). If you use a different version and would
+like to add documentation how you started <code>timeclockj</code> as
+a startup application, see <a href="Help-and-Contribution.html#Help-and-Contribution">Help and Contribution</a>.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Linux-PATH">2.2.3.1 Linux PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Linux-Startup">2.2.3.2 Linux Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Linux-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-PATH-1"></a>
+<h4 class="subsubsection">2.2.3.1 Linux PATH</h4>
+
+<p>You must first edit the system <code>PATH</code> variable such that <code>timeclockj</code>
+will be available as an executable. The following commands can either
+be run from a shell, or entered into the users &lsquo;<tt>.bashrc</tt>&rsquo; file:
+</p>
+<p>To make the <code>timeclockj</code> tools available for execution, run
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/tools/bin
+export $PATH
+</pre></td></tr></table>
+
+<p>&hellip;where <em>[install-dir]</em> is the directory where <code>timeclockj</code>
+was installed to.
+</p>
+<p>To make the <code>timeclockj</code> desktop UI available for execution, run
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/ui/bin
+export $PATH
+</pre></td></tr></table>
+
+<p>&hellip;where <em>[install-dir]</em> is the directory where <code>timeclockj</code>
+was installed to.
+</p>
+<hr size="6">
+<a name="Linux-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-Startup-1"></a>
+<h4 class="subsubsection">2.2.3.2 Linux Startup</h4>
+
+<p>To install <code>timeclockj</code> as a system tray application, follow these steps:
+</p>
+<ol>
+<li>
+Select <code>System</code> -&gt; <code>Preferences</code> -&gt; <code>Startup Applications</code>
+
+</li><li>
+In the <code>Startup Programs</code> tab, select <code>Add</code>
+
+</li><li>
+In the <code>Add Startup Program</code> dialog, Enter the name as <em>timeclockj</em>,
+then select <code>Browse</code> for the <code>Command</code> field. Locate the installation
+directory where <code>timeclockj</code> was installed to, locate the &lsquo;<tt>ui/bin</tt>&rsquo; directory
+and select the &lsquo;<tt>timeclockj-gui</tt>&rsquo; file. Add a comment in the comment field
+if required. When done, select <code>Add</code>
+
+</li><li>
+Select <code>Close</code> when complete. Next time you log into your session
+on Ubuntu Linux, <code>timeclockj</code> will be available as an icon in the
+system tray area.
+
+</li></ol>
+
+<hr size="6">
+<a name="Mac"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux-Startup" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-1"></a>
+<h3 class="subsection">2.2.4 Mac</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Mac-PATH">2.2.4.1 Mac PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Mac-Startup">2.2.4.2 Mac Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Mac-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-PATH-1"></a>
+<h4 class="subsubsection">2.2.4.1 Mac PATH</h4>
+
+<p>TODO. See <a href="Help-and-Contribution.html#Help-and-Contribution">Help and Contribution</a> if you can help with this section.
+</p>
+<hr size="6">
+<a name="Mac-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="index.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="Help-and-Contribution.html#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="timeclockj_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-Startup-1"></a>
+<h4 class="subsubsection">2.2.4.2 Mac Startup</h4>
+
+<p>TODO. See <a href="Help-and-Contribution.html#Help-and-Contribution">Help and Contribution</a> if you can help with this section.
+</p>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="Downloading-and-Installing.html#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="Command-Line-Use.html#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>April 1, 2013</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

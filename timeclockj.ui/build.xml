@@ -1,0 +1,36 @@
+<project name="Install Utilities" default="all" basedir=".">
+  <description>
+    Currently provides only the ability to create .HTML files from .texi files
+    and procude PDF documentation; relies on the GNU 'texi2html' and
+    'texi2pdf' utilities (available for all operating systems).
+
+    Both utilities are available for Linux via most repositories. Windows users
+    should download and install GNU Cygwin.
+  </description>
+  <!-- set global properties for this build -->
+
+  <target name="clean"
+          description="Removes directories generated from this build file." >
+    <delete file="assets/*"/>
+    <delete dir="src/main/resources/doc/*"/>
+  </target>
+
+  <target name="all"
+          description="Deploys help and license data."
+          depends="deploy-help">
+  </target>
+
+  <target name="deploy-help" if="generate.docs"
+          description="Deploys the built .html files to the Swing UI project.">
+    <copy toDir="src/main/resources/doc/timeclockj/images" overwrite="true">
+      <fileset file="../timeclockj.docs/target/docs/javahelp/timeclockj/images/*.png"/>
+    </copy>
+    <copy toDir="src/main/resources/doc/timeclockj" overwrite="true">
+      <fileset file="../timeclockj.docs/target/docs/javahelp/timeclockj/*.html"/>
+    </copy>
+    <copy toDir="src/main/resources/doc" overwrite="true">
+      <fileset file="../timeclockj.docs/target/docs/javahelp/*.*"/>
+    </copy>
+  </target>
+
+</project>

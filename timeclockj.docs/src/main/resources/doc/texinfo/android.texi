@@ -1,0 +1,245 @@
+@node timeclockj for Android
+@chapter timeclockj for Android
+
+@menu
+* Configuring Android::
+* Clocking In and Out With Android::
+* Generating Reports With Android::
+* Getting Information and Help With Android::
+@end menu
+
+This section deals with configuring Android for use with @command{timeclockj}, clocking-in and -out and generating reports. For syncing with Dropbox, see @ref{Dropbox Syncronisation}.
+
+The first use of @command{timeclockj} for Android will typically look like so:
+
+@image{images/android-basic,,3in}
+
+Several tabs are available:
+
+@itemize @bullet
+
+@item @emph{Clock} - enable users to clock-in and out, and create new projects to clock-in to. This is dicussed further in @ref{Clocking In and Out With Android}.;
+
+@item @emph{Report} - create reports for one or all projects, view them immediately or write to disk for later viewing, explained in @ref{Generating Reports With Android};
+
+@item @emph{Info} - get information about version, contributors, clock-file information and view the embedded user manual, discussed in @ref{Getting Information and Help With Android}.
+
+@end itemize
+
+The @emph{Sync} tab for syncing with Dropbox is disabled on first use. It can be enabled via Dropbox preferences, see @ref{Android Syncronisation} on how to enable this tab.
+
+By default, certain defaults are set - for example, @command{timeclockj} expects to be able to read and write a file for clocking-in and -out of that exists on the @sc{sd} card. To see what the default settings are and to change defeaults, see @ref{Configuring Android}.
+
+@node Configuring Android
+@section Configuring Android
+
+Before using Android, decide how you wish to configure your basic settings. By default, @command{timeclockj} stores it's data according to the following rules:
+
+@itemize @bullet
+
+@item All data is stored on the SD card. This is so that the @file{.timelog} file is readable and editable by users, and that the reports generated are freely accessible;
+
+@item the main file used for clocking-in and -out, is stored in the root of the SD card; the default name of the clock file is @file{.timelog}; if there is no such file, it is created when first clocking in;
+
+@item reports are generated in the directory @file{.timeclockj-reports}
+
+@end itemize
+
+@command{timeclockj} can be configured by pressing the setup button when viewing the @emph{Clock}, @emph{Report} or @emph{Info} tabs, then selecting the phone's @emph{Menu} button. Two options will be presented, @emph{Local File Storage} and @emph{Dropbox File Storage}:
+
+@image{images/android-setup,,3in}
+
+Dropbox configuration is covered in @ref{Android Syncronisation}. Use @emph{Local File Storage} to change the default settings for your time clock file and report generation options. Selecting @emph{Local File Storage} will present the following screen:
+
+@image{images/android-setup-local,,3in}
+
+Unchecking the @emph{Store data on SD Card} option will disable all options for this screen and will save the @command{timeclock} data in the private application area. There are two drawbacks to not saving data directly to the SD card: Dropbox synchronisation will not work, and reports cannot be generated to disk (they can be generated, just not saved).
+
+The options when storing data to the SD card are:
+
+@itemize @bullet
+
+@item
+@emph{Timeclock Directory}: By default this is blank, meaning the @command{timeclock} file will be saved to the root of the SD card. If a directory name is given, it must already exist otherwise an error will occur. Separate directory names with a forward slash (@file{/}). The case of the characters of the directory names is important - if you have a directory named @file{Apps/myTimeclock} and wish to store @command{timeclock} data there, entering @file{apps/myTimeclock} will fail - because the case of the characters is different in both cases (in this case the first character).
+
+@item
+@emph{Timeclock File}: The name of the file to save. By default this is @file{.timelog}. If the specified file does not exist on startup, it is created providing there are no permission issues. The file is saved in the @emph{Timeclock Directory}, if the user has specified the directory and the directory exists, otherwise the file is saved on the root of the SD card (unless the user decides to store the @command{timeclock} file within the private application area).
+
+@item
+@emph{TimeClock Reports}:
+The name of the directory to write reports to relative to the root of the SD card. By default this is @file{timeclockj-reports}, but does not need to exist - it is created for you. Note that if you wish to store the @command{timeclock} file in the same directory as your reports, ensure that the @emph{TimeClock Reports} directory is the same as the @emph{TimeClock Directory} setting.
+
+@end itemize
+
+@node Clocking In and Out With Android
+@section Clocking In and Out With Android
+
+@menu
+* Setting the Date and Time::
+* Clocking In With Android::
+* Clocking Out With Android::
+@end menu
+
+Clocking-in is the process of selecting (or creating) a project and then selecting the @emph{Clock In} button, and is covered in @ref{Clocking In With Android}. Clocking-out is the process of clocking out of the currently clocked-in project, along with a description of the clock-activity, covered in @ref{Clocking Out With Android}. Whether clocking-in or -out, if no date or time is specified, the current device date and time is used. Users can optionally set the date and time for clocking-in and -out, covered in @ref{Setting the Date and Time}.
+
+Once clocked-in, no other project can be clocked-in - that is, only a clock-out can occur once clocked-in. Likewise, once clocked-out, no other clock-outs can occur until clocked-in again.
+
+@node Setting the Date and Time
+@subsection Setting the Date and Time
+
+Prior to clocking-in or -out, the date and time can be changed. If neither checkbox for date and time is selected, the date and time is specified as the current device time when clocking-in or -out. For example, setting the date but not the time means that when the clock occurs, the device's time will be used (but not device date). Likewise, not setting
+@i{both} date and time implies that both are obtained from the device date and time when the clock occurs. Setting the date can be useful when a user has forgotten to clock in, or knows when a clock must occur but knows that they'll not have the device to hand.
+
+Be aware that users are expected to enter valid, meaningful dates. Setting the clock-out time to be @i{earlier} than the clock-in time will result in unpredictable behaviour when producing reports.
+
+To set the date, select the @emph{Specify date} checkbox. A dialog will be presented:
+
+@image{images/android-clock-date,,3in}
+
+Edit the date as appropriate and select @emph{Set} to accept the date. To cancel, simply select @emph{Cancel}. The date will ony ever be used if the @emph{Specify date} checkbox is set. If @emph{Set} is selected, the new date will be displayed in the text beneath the button to clock-in or -out. To set the time, select the @emph{Specify time} checkbox. A dialog will be presented:
+
+@image{images/android-clock-time,,3in}
+
+Edit the date as appropriate and select @emph{Set} to accept the time. To cancel, simply select @emph{Cancel}. The time will ony ever be used if the @emph{Specify time} checkbox is set. If @emph{Set} is selected, the new time will be displayed in the text beneath the button to clock-in or -out.
+
+@node Clocking In With Android
+@subsection Clocking In With Android
+
+The clock tab, when not clocked-in, has a screen similar to the following:
+
+@image{images/android-basic,,3in}
+
+The clock-in screen contains the following:
+
+@itemize @bullet
+
+@item Clock status coloured red: "Not currently clocked-in";
+
+@item checkboxes for specifying the date and time of the clock-in;
+
+@item a drop-down list for selecting the project to clock-in with (with @emph{Gym} selected in the image), with the option to create a new project;
+
+@item the @emph{Clock In} button to clock-in; and
+
+@item text underneath the @emph{Clock In} button detailing the next clock action; in this case, it states that the next clock-in will be with project @emph{Gym} with the
+current date and time 12:00. Editing any of the fields on this screen will update this text.
+
+@end itemize
+
+Clock-in by selecting the appropriate project from the drop-down list, and then selecting @emph{Clock In}. Several options are available to clock-in via the drop-down list:
+
+@itemize @bullet
+
+@item
+Clock-in to the @emph{<default>} (no-name) project;
+
+@item
+Create a new project by selecting @emph{New Project...}
+
+@item
+Select a project that has already been created from selecting @emph{New Project} previously.
+
+@end itemize
+
+The following image illustrates basic options for the default project, several other projects (@emph{Gym} and @emph{Spanish Course}) and the @emph{New Project} option:
+
+@image{images/android-new-project-with-existing-projects,,3in}
+
+Selecting an existing project will ensure that the currently-selected project is displayed as the next project to clock-in with.
+
+To create a new project, select @code{New Project...} from the drop-down list. A dialog will be presented:
+
+@image{images/android-new-project-dialog,,3in}
+
+Enter the project name then select @code{OK}. The new project will be automatically clocked-in. Project names may contain any combination of alpha-numeric characters, spaces and
+underscore (@code{_}) characters.
+
+Once clocked in, the screen will change. The @emph{Clock In} button will now say @emph{Clock Out}, the project drop-down list will disappear and a new checkbox will appear for adding a description.
+
+@node Clocking Out With Android
+@subsection Clocking Out With Android
+
+The clock tab, when clocked-in, has a screen similar to the following:
+
+@image{images/android-pre-clockout,,3in}
+
+The clock-in screen contains the following:
+
+@itemize @bullet
+
+@item Clock status, coloured green: "Status: Currently clocked-in to @emph{Gym}", or whatever the currently clocked-in project is;
+
+@item checkboxes for specifying the date and time of the clock-out. This button is checked, and the time is displayed in the text beneath the @emph{Clock Out} button;
+
+@item a checkbox to enter a description, detailing the reason for clocking-out. This button is checked, and the description is displayed in the text beneath the @emph{Clock Out} button;
+
+@item the @emph{Clock Out} button to clock-out.
+
+@item text underneath the @emph{Clock Out} button detailing the next clock action; in this case, it states that the clock out will occur with the current clocked-in project
+@emph{Gym}, with current date, time 14:00, containing description @emph{Standard workout, 3 sets x 12 reps}. Editing any of the fields on this screen will update this text.
+
+@end itemize
+
+To clock out of the current project, click the @code{Clock Out} button.
+
+A description can be added when clocking-out. Simply check the @emph{Add Description} checkbox, then select clock-out. A dialog will be presented offering the opportunity to add a description. To add the description, enter required text then select @emph{OK}. Clicking @emph{Cancel} will return the user to the main screen and no clock-out will be performed.
+
+The description checkbox, when selected, will provide a dialog for entering a description.
+
+@image{images/android-clock-out-description,,3in}
+
+Select @emph{OK} to accept the description or @emph{Cancel} to disregard your changes.
+
+Once clocked out, the screen will change. The @emph{Clock Out} button will now say @emph{Clock In}, the project drop-down list will re-appear and the checkbox for adding a description will disappear.
+
+@node Generating Reports With Android
+@section Generating Reports With Android
+
+Reports can be generated for single projects or all projects. Note that reports can only be generated once the first clock-in has occurred. Prior to the first clock-in, the report generation button on the report tab is disabled. 
+
+The Android report screen contains several options once a user has at least
+one clock-in:
+
+@image{images/android-reports,,3in}
+
+@itemize @bullet
+
+@item choose @code{Select Project} to view a report for any project, then use the dropdown box to select a project;
+
+@item select @code{All Projects} to view reports for all projects;
+
+@item @code{Write to file} is used to write the report to the SD card - see @ref{Configuring Android} on how to set the directory to write files to or find out the default directory for file writing;
+
+@item @code{View in browser} is used to view reports immediately in a browser;
+
+@item by selecting @code{Specify start date} the user can print reports from the given start date; and
+
+@item @code{Specify end date} will mean that reports are only generated up to the given date
+
+@end itemize
+
+When the apporpriate choices have been made, select the relevant checkboxes to either write reports to file or view in a browser (or both), specify start/end dates (if required) then select @code{Produce Reports(/s)}.
+
+If you selected to write reports to file, these files will now be generated in the report directory (see @ref{Configuring Android}). Selecting @code{View reports in browser} will launch the report in the browser.
+
+@node Getting Information and Help With Android
+@section Getting Information and Help With Android
+
+The information tab gives useful information about the version, license, contributors, help pages and file data:
+
+@image{images/android-info-tab,,3in}
+
+The different functions of the buttons are as follows:
+
+@itemize @bullet
+
+@item @emph{About} button, detailing the version of @command{timeclockj} being used, as well as license information and project website;
+
+@item @emph{Contributors} button, detailing different contributors to the project; 
+
+@item @emph{Help} button - selecting this will launch the embedded help pages;
+
+@item File data information, such as last modification date.
+
+@end itemize
+

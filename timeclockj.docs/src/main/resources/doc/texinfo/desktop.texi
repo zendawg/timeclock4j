@@ -1,0 +1,214 @@
+@node timeclockj for the Desktop
+@chapter timeclockj for the Desktop
+
+@menu
+* UI Configuration::
+* Clocking In With the UI::
+* Clocking Out With the UI::
+* Generating Reports With the UI::
+* Getting Help::
+* The About Dialog::
+* Exiting::
+@end menu
+
+The System tray user interface @command{timeclockj-gui} enables users to
+clock in and out of tasks, create new projects and tasks, via a simple
+interface. The application sits in the windowing 'tray', known as the
+@emph{Task Bar} in Windows as a clock icon. The following image shows
+@command{timeclockj} running in the Task Bar on Windows as a small
+clock:
+
+@image{images/timeclockj-sys-tray-windows}
+
+@dots{}and on Ubuntu Linux:
+
+@image{images/timeclockj-sys-tray-linux}
+
+To access the main functions of the application, a right-click is made
+on the icon which then brings up a menu.
+
+When the application first starts, it determines if a clock is
+already in progress (i.e. has not been clocked out). The user interface
+only permits a clock-in to occur if a clock-out was the last line
+detected in the @command{timeclock} file. Likewise, a clock-out
+can only occur if the last line in the file was a clock-in.
+
+The following image shows the basic user interface displayed when the
+user right-clicks on the clock icon:
+
+@image{images/timeclockj-basic}
+
+@node UI Configuration
+@section UI Configuration
+
+Several command-line options are available when starting the UI. As well
+as the options given in @ref{Common Command Line Options}, the following
+options are available:
+
+@itemize @bullet
+
+@item
+@code{-i,--interval <arg>} Set time (seconds) for time to wait before
+                         checking if file has changed. Default is 1. Use with
+@code{--reload-on-change}
+
+@item
+@code{-d,--report-dir <arg>} Use the specified directory to write reports to;
+                         will be created if it does not exist. Defaults to the user's home
+                         directory in a file named @file{.timeclockj/reports}
+
+@item
+@code{-r,--reload-on-change} If file has changed, reload. Use with @code{--interval}
+
+
+@end itemize
+
+@node Clocking In With the UI
+@section Clocking In With the UI
+
+Clock-in by right-clicking the tray icon and selecting @code{Clock In}. Several
+options will be available. If the @command{timeclock} file contains other projects,
+these are listed under the @code{Clock In} menu. The `default' (i.e. project
+with no name) project is given as @code{<default>}.
+
+The following image illustrates this, along with several other projects available
+for clocking-in:
+
+@image{images/timeclockj-clock-in}
+
+Clocking-in to the selected project will cause a new line to be added to the
+@command{timeclock} file.
+
+To create a new project, select @code{Clock In}, then select @code{New Project}.
+A dialog will be presented:
+
+@image{images/timeclockj-enter-project-name}
+
+Enter the project name then select @code{OK}.
+
+Once clocked in, the menu will change; the @code{Clock Out} menu will
+become enabled and the @code{Clock In} menu will become disabled.
+
+Several options can also be set when clocking-in. Selecting
+@code{Clock In With Options...} will present the following dialog:
+
+@image{images/timeclockj-clockin-with-options}
+
+Several options are available, each with a checkbox. If the checkbox is not
+selected when the user selects @emph{OK}, that field is not used as part
+of the clock-in. The options are as follows:
+
+@itemize @bullet
+
+@item date checkbox with date field; selecting the checkbox allows a user
+to enter a date in the format @emph{yyyy-mm-dd}.
+
+@item time checkbox with time field; selecting the checkbox allows a user
+to enter a time in the format @emph{hh:mm}.
+
+@item project-list selector. The selected project will be used to clock-in with.
+Furthermore, new projects can be created from the list option
+@emph{New Project}.
+
+@end itemize
+
+@include ui-date-time.texi
+
+@node Clocking Out With the UI
+@section Clocking Out With the UI
+
+To clock out of the current project, select @code{Clock Out '[projectName]'}
+where @emph{projectName} is the name of the currently clocked-in project.
+
+The currently clocked-in project is always displayed as a clock-out option
+as the first option in the popup menu from the tray icon. In the following
+diagram, the @emph{Documentation} project is currently clocked-in,
+and is therefore available to be clocked-out with the first menu item:
+
+@image{images/timeclockj-clock-out}
+
+Note that two clock-out options are given; the first is for clocking-out
+without a description. This clocks-out the current project.
+The second option allows a description, date and time to be
+added, and an input screen will be shown allowing text to be entered
+against the clocked-out time period:
+
+@image{images/timeclockj-clockout-with-options}
+
+Several options are available, each with a checkbox. If the checkbox is not
+selected when the user selects @emph{OK}, that field is not used as part
+of the clock-out. The options are as follows:
+
+@itemize @bullet
+
+@item date checkbox with date field; selecting the checkbox allows a user
+to enter a date in the format @emph{yyyy-mm-dd}.
+
+@item time checkbox with time field; selecting the checkbox allows a user
+to enter a time in the format @emph{hh:mm}.
+
+@item description detailing the cause for clocking-out.
+
+@end itemize
+
+@include ui-date-time.texi
+
+@node Generating Reports With the UI
+@section Generating Reports With the UI
+
+Reports can be generated for single projects or all projects.
+
+Several options are available from the report menu:
+
+@itemize @bullet
+
+@emph{Current project} - this will be greyed-out if the user is not currently clocked-in, otherwise the currently clocked-in project will be displayed. Selecting this will produce a report for the current project;
+
+@item the @emph{Project} menu lists all projects available that exist within the clock file. Selecting an individual project to produce a report for that project;
+
+@item select @emph{All Projects} to produce a report for every single project in the clock file; and
+
+@item @emph{Specify Report Time} enables users to select a start and/or end date to produce a specified report for. If selected, a dialog will be presented with the option to enter a start and end date. If no start date is supplied, all reports prior to the end date is prodced. If no end date is supplied, all reports up to the last clock for that project is produced.
+
+@end itemize
+
+The following illustrates these options:
+
+@image{images/timeclockj-report}
+
+Generating a report for a single project will result in a @sc{html}
+report being generated on disk (see @ref{UI Configuration} for information
+on setting the report file generation directory). Generating a report for
+all projects will result in the reports being produced in an @sc{html}
+page with links to each project and links back to the top of the page.
+
+In each case the newly generated report will be opened using the default
+@sc{os} browser.
+
+@node Getting Help
+@section Getting Help
+
+The @command{timeclockj} application also comes with an integrated help system,
+by right-clicking the tray icon and selecting @code{Help Contents}. This will bring
+up the JavaHelp user interface:
+
+@image{images/timeclockj-help}
+
+Note however that there are some rendering problems with @sc{html} using JavaHelp;
+some characters are not marked up correctly. If you find you have problems reading
+the @sc{html} help pages using Java help, try looking at the @sc{pdf} or
+@sc{html} documents that came as part of the installation (if these
+were not installed on startup, they can be installed by running the installer again
+and selecting an appropriate directory to install the documents to).
+
+@node The About Dialog
+@section The About Dialog
+
+The About dialog displays information about the contributors and copyright,
+as well as thrid-party libraries used.
+
+@node Exiting
+@section Exiting
+
+Selecting @code{Exit} from the tray icon will quit the application.
+

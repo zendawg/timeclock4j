@@ -1,0 +1,68 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename timeclockj.info
+@settitle timeclockj (1.1)
+@c %**end of header
+
+@copying
+@c This is a short example of a complete Texinfo file.
+
+Copyright @copyright{} 2013, Richard Meeking
+@end copying
+
+@titlepage
+@title timeclockj (1.1)
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the table of the contents at the beginning.
+@contents
+
+@ifnottex
+@node Top
+@top timeclockj
+
+@insertcopying
+@end ifnottex
+
+@menu
+* Introduction::
+* Downloading and Installing::
+* Command Line Use::
+* timeclockj for the Desktop::
+* timeclockj for Android::
+* Dropbox Syncronisation::
+* Help and Contribution::
+@end menu
+
+@include introduction.texi
+
+@include downloading-and-installing.texi
+
+@include command-line-use.texi
+
+@include desktop.texi
+
+@include android.texi
+
+@include sync.texi
+
+@node Help and Contribution
+@chapter Help and Contribution
+
+Although the project is a few years old, contribution has been sparse
+and patchy at times. @command{timeclockj} is in it's second alpha release;
+there are probably many bugs and issues that need resolving.
+
+Please visit @url{https://sourceforge.net/projects/timeclockj/support} for any
+issues to do with feature requests, bug reports or other issues.
+
+If you'd like to get involved with @command{timeclockj} on any level (development,
+user testing, documentation), feel free to contact the @command{timeclockj}
+team at Source Forge, @url{https://sourceforge.net/projects/timeclockj}.
+
+@printindex cp
+
+@bye

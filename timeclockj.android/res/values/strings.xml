@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeClockJ</string>
+    <string name="timeclockj_timelog">timeclockj_timelog</string>
+    <string name="timeclockj_timelog_dir">timeclockj_timelog_dir</string>
+    <string name="timeclockj_sdcard">timeclockj_sdcard</string>
+    <string name="timeclockj_report_dir">timeclockj_report_dir</string>
+    <string name="timeclockj_dropbox_dir">timeclockj_dropbox_dir</string>
+    <string name="timeclockj_dropbox">timeclockj_dropbox</string>
+</resources>

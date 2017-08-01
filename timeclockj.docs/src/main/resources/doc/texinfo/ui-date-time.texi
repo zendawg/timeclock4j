@@ -1,0 +1,6 @@
+Losing focus of any date or time field (by selecting another UI field) will
+cause the newly entered date/time to be parsed, either in the format
+@emph{yyyy-mm-dd} (for dates) and @emph{hh:mm} (for times). Failure to enter
+a correct date or time will result in an error dialog being displayed,
+and the field will become disabled and the checkbox for the date or time will
+become unselected.

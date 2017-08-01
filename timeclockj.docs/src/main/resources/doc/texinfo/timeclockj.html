@@ -1,0 +1,2222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- 
+Copyright C 2013, Richard Meeking
+ -->
+<!-- Created on July 26, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>timeclockj (1.1)</title>
+
+<meta name="description" content="timeclockj (1.1)">
+<meta name="keywords" content="timeclockj (1.1)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Top"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="timeclockj"></a>
+<h1 class="settitle">timeclockj</h1>
+
+
+<p>Copyright &copy; 2013, Richard Meeking
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Introduction">1. Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Downloading-and-Installing">2. Downloading and Installing</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Command-Line-Use">3. Command Line Use</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#timeclockj-for-the-Desktop">4. timeclockj for the Desktop</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#timeclockj-for-Android">5. timeclockj for Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Dropbox-Syncronisation">6. Dropbox Syncronisation</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Help-and-Contribution">7. Help and Contribution</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="1">
+<a name="Introduction"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Introduction-1"></a>
+<h1 class="chapter">1. Introduction</h1>
+
+<p><code>timeclockj</code> is a desktop and mobile phone application used
+to track time spent on different projects, both personal, business or
+leisure. Keeping track of projects means you can produce reports
+against them, and tally the hours you&rsquo;ve spent over days, weeks and
+months and see when you&rsquo;re most active.
+</p>
+<p>The mobile Android version of <code>timeclockj</code> uses Dropbox
+to syncronise files between your mobile and desktop. By doing this, all devices
+can access and use the same <code>timeclock</code> file. Mobile
+devices use <em>push</em> and <em>pull</em> commands to sync their mobile
+devices directly with Dropbox.
+</p>
+<p><code>timeclockj</code> provides libraries and tools for reading,
+viewing and writing <small>GNU</small> <code>emacs</code> mode <code>timeclock</code> files.
+<small>GNU</small> <code>emacs</code> &quot;&hellip;is an extensible, customizable text editor&quot;
+<a name="DOCF1" href="#FOOT1">(1)</a> that contains a mode -
+known as <code>timeclock</code> mode - for clocking-in and -out of projects.
+It is this mode for <small>GNU</small> <code>emacs</code> that is the inspiration
+for <code>timeclockj</code>.
+</p>
+<p>Command-line tools are provided, as is a desktop UI that sits in the
+operating system tray (sometimes called a Task Bar), and a mobile Android
+version. <code>timeclockj</code> is <i>not</i> a <code>timeclock</code> clone - it has different
+commands, different options but the end result is the same -
+manipulating <code>timeclock</code> files.
+</p>
+<p>A clock in line starts with an <code>i</code> character, a space, a date of the format 
+<code>yyyy/MM/dd HH:mm:ss</code>, and an optional string denoting a project. No project
+implies the default (no-name) project is being clocked-in. A clock-out line starts
+with a <code>o</code> character, date and time (using the format specified for clock-ins)
+with an optional string denoting a description for the clock-out.
+</p>
+<p>Here are some examples of clock lines from a <code>timeclock</code> file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">i 2010/10/05 13:28:57 Gym
+o 2010/10/05 14:57:04
+i 2010/10/05 18:29:36 Spanish Course
+o 2010/10/05 20:32:14 Verbs, revised shopping
+i 2010/10/06 09:15:22
+o 2010/10/06 12:09:58
+</pre></td></tr></table>
+
+<p>Line one shows the <em>Gym</em> project being clocked-in at almost 1:30pm,
+and clocked-out at nearly 3pm (line two). <em>Spanish Course</em> begins at almost
+6:30pm (line three), and is finished by 8:30pm line four). Finally, on lines
+five and six, the next day from 9:15am to 12:09pm, the default (no-name)
+project is clocked. In the case of the <em>Gym</em> and default project, no description
+is giving when clocking-out. With the <em>Spanish Course</em> project, the description
+<em>Verbs, revised shopping</em> is given.
+</p>
+<hr size="6">
+<a name="Downloading-and-Installing"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Introduction" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Downloading" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Introduction" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Downloading-and-Installing-1"></a>
+<h1 class="chapter">2. Downloading and Installing</h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Downloading">2.1 Downloading</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Installing-and-System-Tray-Integration">2.2 Installing and System Tray Integration</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Downloading"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Downloading-1"></a>
+<h2 class="section">2.1 Downloading</h2>
+
+<p><code>timeclockj</code> can be downloaded from SourceForge. The desktop UI application
+&lsquo;<tt>.jar</tt>&rsquo; file installer is available at the project main page as a download:
+</p>
+<p><a href="https://sourceforge.net/projects/timeclockj/">https://sourceforge.net/projects/timeclockj/</a>
+</p>
+<p>Optionally, to view all files available for download (including documentation), visit:
+</p>
+<p><a href="https://sourceforge.net/projects/timeclockj/files/timeclockj-1.1">https://sourceforge.net/projects/timeclockj/files/timeclockj-1.1</a>
+</p>
+<p>All operating systems can download the &lsquo;<tt>.jar</tt>&rsquo; installer; optionally
+a &lsquo;<tt>.exe</tt>&rsquo; installer is also provided for Windows users.
+</p>
+<p>Android <code>timeclockj</code> will be available soon from the Google Android store.
+</p>
+<hr size="6">
+<a name="Installing-and-System-Tray-Integration"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Downloading" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installation-_002d-all-platforms" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Installing-and-System-Tray-Integration-1"></a>
+<h2 class="section">2.2 Installing and System Tray Integration</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Installation-_002d-all-platforms">2.2.1 Installation - all platforms</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Windows">2.2.2 Windows</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Linux">2.2.3 Linux</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Mac">2.2.4 Mac</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Installation-_002d-all-platforms"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Installation-_002d-all-platforms-1"></a>
+<h3 class="subsection">2.2.1 Installation - all platforms</h3>
+
+<p>This section deals with installing <code>timeclockj</code> and setting it up as
+an application running in the system tray as well as a command-line
+tool. Since the installer is cross-platform, the following instructions
+are suitable for all operating systems.
+</p>
+<p>A Java Runtime Environment (JRE) of 1.5 or higher is required to install
+<code>timeclockj</code>.
+</p>
+<p>Two install files are available: &lsquo;<tt>timeclockj-installer-1.1-alpha.exe</tt>&rsquo;
+specifically for Windows, and &lsquo;<tt>timeclockj-installer-1.1-alpha.jar</tt>&rsquo;
+for any operating system (including Windows).
+</p>
+<p>For Windows, double-click the &lsquo;<tt>timeclockj-installer-1.1-alpha.exe</tt>&rsquo;
+file to begin installation. For &lsquo;<tt>timeclockj-installer-1.1-alpha.jar</tt>&rsquo;,
+ensure that the
+file is executable and that a helper application (JRE) is associated
+with it and then double-click the jar file. The jar file can also be
+executed from the command line by changing directory to where the downloaded
+&lsquo;<tt>.jar</tt>&rsquo; file is located and running:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">java -jar timeclockj-installer-1.1-alpha.jar
+</pre></td></tr></table>
+
+<p>Once running, the installer introduction screen will be displayed:
+</p>
+<img src="images/install-screen-01.png" alt="images/install-screen-01">
+
+<p>Select <code>Next</code> to begin installation. The license screen
+will be displayed:
+</p>
+<img src="images/install-screen-02.png" alt="images/install-screen-02">
+
+<p>Enter your choice to accept the software license agreement and
+select <code>Next</code> if proceeding with installation.
+</p>
+<p>The next screen prompts you to select which packs to install:
+</p>
+<img src="images/install-screen-03.png" alt="images/install-screen-03">
+
+<p>Several packs are available:
+</p>
+<ul>
+<li>
+<em>Command-Line Tools</em> contains all tools and libraries necessary to be
+able to run <code>timeclockj</code> as a command-line tool;
+
+</li><li>
+<em>PDF Documentation</em> contains <small>PDF</small> help documentation
+
+</li><li>
+<em>HTML Documentation</em> contains a single-page <small>HTML</small> help file; and
+
+</li><li>
+<em>Desktop UI</em> contains the files necessary to run <code>timeclockj</code> as a
+graphical tool from the system tray/task bar.
+
+</li></ul>
+
+<p>Ensure at least one of the checkboxes is selected, then select <code>Next</code>.
+</p>
+<p>Having selected the packs you wish to install, you are promted to enter
+an installation directory:
+</p>
+<img src="images/install-screen-04.png" alt="images/install-screen-04">
+
+<p>Either accept the default or select <code>Browse</code>
+to enter a new location. Select <code>Next</code> when ready to
+proceed with installation. The next screen shows installation
+progress; select <code>Next</code> and the final installation screen
+will be displayed:
+</p>
+<img src="images/install-screen-06.png" alt="images/install-screen-06">
+
+<p>Select <code>Done</code> to quit. In order to be able to execute commands
+(tools or UI) from the command line, you must set the path for the
+operating system you&rsquo;re running, and (if necessary) set <code>timeclockj</code>
+as a startup application. This can be done for several operating systems:
+<a href="#Windows">Windows</a>, <a href="#Linux">Linux</a> and <a href="#Mac">Mac</a>.
+</p>
+<hr size="6">
+<a name="Windows"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Installation-_002d-all-platforms" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-1"></a>
+<h3 class="subsection">2.2.2 Windows</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Windows-PATH">2.2.2.1 Windows PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Windows-Startup">2.2.2.2 Windows Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Windows-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-PATH-1"></a>
+<h4 class="subsubsection">2.2.2.1 Windows PATH</h4>
+
+<p>If you would like to be able to run <code>timeclockj</code> from the command-line,
+edit the Windows <code>PATH</code> variable. To do this, perform the following
+steps:
+</p>
+<ol>
+<li>
+Open the Windows <em>Control Panel</em>; on Windows XP, this can be done by
+selecting <em>Start</em>, then choose <em>Control Panel</em>;
+
+</li><li>
+Double-click the <em>System</em> icon;
+
+</li><li>
+Select the <em>Advanced</em> tab;
+
+</li><li>
+Click the <em>Environment Variables</em> button at the bottom of the tab;
+
+</li><li>
+In the <em>System variables</em> box, select the <em>PATH</em> variable,
+then select <em>Edit</em>;
+
+</li><li>
+For the <em>Variable path</em>, add to the end of the line a semi-colon,
+followed by <code>[install-dir]\[component]\bin</code>, where <em>[install-dir]</em>
+is the directory where <code>timeclockj</code> was installed to, and
+<em>[component]</em> is one of <code>tools</code> or <code>ui</code>. If you add tools,
+your line would look as follows (after being appended to the line prior
+to editing), assuming <em>[install-dir]</em> is &lsquo;<tt>C:\Program Files\timeclock</tt>&rsquo;:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">C:\Program Files\timeclock\tools\bin
+</pre></td></tr></table>
+
+<p>To add the UI component, append another semi-colon and add
+<code>C:\Program Files\timeclock\ui\bin</code> to the path.
+</p>
+</li></ol>
+
+<hr size="6">
+<a name="Windows-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Windows" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Windows-Startup-1"></a>
+<h4 class="subsubsection">2.2.2.2 Windows Startup</h4>
+
+<p>This section assumes the UI component is installed. To ensure <code>timeclockj</code>
+starts when you first log in, perform the following steps:
+</p>
+<ol>
+<li>
+Using Windows explorer, locate the directory where <code>timeclockj</code> was installed to;
+
+</li><li>
+Locate and open for editing the file &lsquo;<tt>ui\bin\timeclockj-ui.bat</tt>&rsquo;;
+
+</li><li>
+Right-click on the file and select <em>Create Shortcut</em>. A shortcut will be created
+in the same directory;
+
+</li><li>
+Right-click on the newly created shortcut and select <em>Cut</em>;
+
+</li><li>
+Locate the directory:
+
+<p>&lsquo;<tt>C:\Documents and Settings\[user]\Start Menu\Programs\Startup</tt>&rsquo;
+</p>
+<p>using Windows explorer where <em>[user]</em> is the user name logged in to Windows;
+</p>
+</li><li>
+Right-click in the directory and select <em>Paste</em>;
+
+</li><li>
+Log out and the login again. <code>timeclockj</code> should now be sitting in the
+Task Bar.
+
+</li></ol>
+
+<p>If this loads <code>timeclockj</code> but leaves a console (DOS prompt) window
+open, edit the file &lsquo;<tt>timeclockj-gui.bat</tt>&rsquo; in the &lsquo;<tt>ui\bin</tt>&rsquo;
+folder, and locate the line:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if &quot;%JAVACMD%&quot;==&quot;&quot; set JAVACMD=javaw
+</pre></td></tr></table>
+
+<p>If <code>JAVACMD</code> is <code>java</code> instead of <code>javaw</code>,
+change it to <code>javaw</code>.
+</p>
+<p>Then locate the line where <code>timeclockj</code> is ran from - 
+it should start like so:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">start %JAVACMD% %JAVA_OPTS% %EXTRA_JVM_ARGUMENTS%
+</pre></td></tr></table>
+
+<p>However, if the line does not start with the text <code>start</code> (as in the
+above example), change it so that it does. Log out, then login again.
+</p>
+<p>If this still does not work, see <a href="#Help-and-Contribution">Help and Contribution</a>.
+</p>
+<hr size="6">
+<a name="Linux"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Windows-Startup" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-1"></a>
+<h3 class="subsection">2.2.3 Linux</h3>
+
+<p><code>timeclockj</code> documentation has only been written for the system
+tray on Ubuntu Linux (Lucid). If you use a different version and would
+like to add documentation how you started <code>timeclockj</code> as
+a startup application, see <a href="#Help-and-Contribution">Help and Contribution</a>.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Linux-PATH">2.2.3.1 Linux PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Linux-Startup">2.2.3.2 Linux Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Linux-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-PATH-1"></a>
+<h4 class="subsubsection">2.2.3.1 Linux PATH</h4>
+
+<p>You must first edit the system <code>PATH</code> variable such that <code>timeclockj</code>
+will be available as an executable. The following commands can either
+be run from a shell, or entered into the users &lsquo;<tt>.bashrc</tt>&rsquo; file:
+</p>
+<p>To make the <code>timeclockj</code> tools available for execution, run
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/tools/bin
+export $PATH
+</pre></td></tr></table>
+
+<p>&hellip;where <em>[install-dir]</em> is the directory where <code>timeclockj</code>
+was installed to.
+</p>
+<p>To make the <code>timeclockj</code> desktop UI available for execution, run
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj_HOME=[install-dir]
+PATH=$PATH:$timeclockj_HOME/ui/bin
+export $PATH
+</pre></td></tr></table>
+
+<p>&hellip;where <em>[install-dir]</em> is the directory where <code>timeclockj</code>
+was installed to.
+</p>
+<hr size="6">
+<a name="Linux-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Linux" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Linux-Startup-1"></a>
+<h4 class="subsubsection">2.2.3.2 Linux Startup</h4>
+
+<p>To install <code>timeclockj</code> as a system tray application, follow these steps:
+</p>
+<ol>
+<li>
+Select <code>System</code> -&gt; <code>Preferences</code> -&gt; <code>Startup Applications</code>
+
+</li><li>
+In the <code>Startup Programs</code> tab, select <code>Add</code>
+
+</li><li>
+In the <code>Add Startup Program</code> dialog, Enter the name as <em>timeclockj</em>,
+then select <code>Browse</code> for the <code>Command</code> field. Locate the installation
+directory where <code>timeclockj</code> was installed to, locate the &lsquo;<tt>ui/bin</tt>&rsquo; directory
+and select the &lsquo;<tt>timeclockj-gui</tt>&rsquo; file. Add a comment in the comment field
+if required. When done, select <code>Add</code>
+
+</li><li>
+Select <code>Close</code> when complete. Next time you log into your session
+on Ubuntu Linux, <code>timeclockj</code> will be available as an icon in the
+system tray area.
+
+</li></ol>
+
+<hr size="6">
+<a name="Mac"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Linux-Startup" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac-PATH" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Installing-and-System-Tray-Integration" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-1"></a>
+<h3 class="subsection">2.2.4 Mac</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Mac-PATH">2.2.4.1 Mac PATH</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Mac-Startup">2.2.4.2 Mac Startup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Mac-PATH"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac-Startup" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-PATH-1"></a>
+<h4 class="subsubsection">2.2.4.1 Mac PATH</h4>
+
+<p>TODO. See <a href="#Help-and-Contribution">Help and Contribution</a> if you can help with this section.
+</p>
+<hr size="6">
+<a name="Mac-Startup"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac-PATH" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mac" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mac-Startup-1"></a>
+<h4 class="subsubsection">2.2.4.2 Mac Startup</h4>
+
+<p>TODO. See <a href="#Help-and-Contribution">Help and Contribution</a> if you can help with this section.
+</p>
+
+<hr size="6">
+<a name="Command-Line-Use"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mac-Startup" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Common-Command-Line-Options" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Downloading-and-Installing" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Command-Line-Use-1"></a>
+<h1 class="chapter">3. Command Line Use</h1>
+
+<p>The <code>timeclockj</code> tool is used for manipulating <code>timeclock</code> files.
+The basic syntax for command-line use is:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj [command] [options]
+</pre></td></tr></table>
+
+<p>&hellip;where <em>[command]</em> is one of <code>in</code> (for clocking in),
+<code>out</code> (for clocking out) or <code>report</code> for generating reports.
+</p>
+<p>Supplying the command is optional - see <a href="#Common-Command-Line-Options">Common Command Line Options</a> for
+command-line options that do not require any a command to be executed.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Common-Command-Line-Options">3.1 Common Command Line Options</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-In">3.2 Clocking In</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-Out">3.3 Clocking Out</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Generating-Reports">3.4 Generating Reports</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Common-Command-Line-Options"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Command-Line-Use" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Common-Command-Line-Options-1"></a>
+<h2 class="section">3.1 Common Command Line Options</h2>
+
+<p>All tools share command command line options. These options are as follows:
+</p>
+<ul>
+<li>
+<code>-f,--file &lt;arg&gt;</code> Set the timeclock file to use. If no file is
+                      specified, &lsquo;<tt>.timelog</tt>&rsquo; is read from the user&rsquo;s home directory. If no such
+                      file exists, it is created.
+
+</li><li>
+<code>-h,--help</code> Print help information then exit.
+
+</li><li> 
+<code>-l,--list</code> Parse the <code>timeclock</code> file, list project names, then quit.
+
+</li><li> 
+<code>-v,--version</code> Print version information, then quit.
+
+</li><li> 
+<code>-c,--license</code> Print copyleft license information, then quit.
+
+</li></ul>
+
+
+<hr size="6">
+<a name="Clocking-In"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Common-Command-Line-Options" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-Out" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-1"></a>
+<h2 class="section">3.2 Clocking In</h2>
+
+<p>The <code>in</code> command is used to clock in. In addition to the
+options available given in <a href="#Common-Command-Line-Options">Common Command Line Options</a>,
+clocking-in has the following additional option:
+</p>
+<ul>
+<li>
+<code>-p,--project &lt;arg&gt;</code> Set the project to clock in with. The default
+                      (blank) project will be used if no project is specified. Specify projects
+                      with spaces in using quotes. For example, for a project named
+                      <em>Floor Tiles</em>, the option would be <code>-p &quot;Floor Tiles&quot;</code>.
+
+</li><li>
+<code>-s,--start-date &lt;arg&gt;</code> Specify the clock-in date (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+</li></ul>
+
+<p>Attempting to clock-in to a <code>timeclock</code> file that already contains
+a clock-in (without succeeding clock-out) will result in an error and the
+clock-in will fail. Otherwise, the file will be appended with the
+new clocked-in time and project name (if specified).
+</p>
+<p>To clock in to the default project, supply no arguments to the
+<code>in</code> command.
+Running without any arguments will produce the following output (dates will
+vary of course):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj in</b>
+Clocked in: 2010/10/07 13:35:34
+</pre></td></tr></table>
+
+<p>This clocks in to the default (no-name) project. An entry will be
+appended to the end of the <code>timeclock</code> file as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">i 2010/10/07 13:35:34
+</pre></td></tr></table>
+
+<p>Attempting to clock-in again will result in the following error:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj in</b>
+You've already clocked in!
+</pre></td></tr></table>
+
+<p>To clock in with a specific project, use the <code>-p</code> or <code>--project</code>
+option:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj in --project shopping</b>
+Clocked in: 2010/10/07 13:40:38 (shopping)
+</pre></td></tr></table>
+
+<p>An entry will be appended to the end of the <code>timeclock</code> file as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">i 2010/10/07 13:40:38 shopping
+</pre></td></tr></table>
+
+<p>For projects with spaces in the name, ensure the option is surrounded
+with quotes, thus:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b>timeclockj in --project &quot;Spanish Course&quot;</b>
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Clocking-Out"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Generating-Reports" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-1"></a>
+<h2 class="section">3.3 Clocking Out</h2>
+
+<p>The <code>out</code> command is used to clock out. In addition to the
+options available given in <a href="#Common-Command-Line-Options">Common Command Line Options</a>, the
+<code>out</code> command also has the following option:
+</p>
+<ul>
+<li>
+<code>-d,--description &lt;arg&gt;</code> Set the reason for clocking out. A description is
+                      optional. Specify descriptions
+                      with spaces in using quotes. For example, for a description
+                      <em>Had to leave meeting</em>, the option would be
+                      <code>-d &quot;Had to leave meeting&quot;</code>.
+
+</li><li>
+<code>-e,--end-date &lt;arg&gt;</code> Specify the clock-out date (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+</li></ul>
+
+<p>Attempting to clock-out to a <code>timeclock</code> file that already contains
+a clock-out (without succeeding clock-in) will result in an error and the
+clock-out will fail. Otherwise, the file will be appended with the
+new clocked-out time and description (if specified).
+</p>
+<p>To clock out of the currently clocked-in project, supply no arguments
+to <code>timeclockj out</code>. Running without any arguments will produce
+the following output (dates will vary of course):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out</b>
+Clocked out: 2010/10/07 13:42:37
+</pre></td></tr></table>
+
+<p>&hellip;produces the following output in the <code>timeclock</code> file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">o 2010/10/07 13:42:37
+</pre></td></tr></table>
+
+<p>Attempting to clock-out again will result in the following error:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out</b>
+You've already clocked out!
+</pre></td></tr></table>
+
+<p>To clock-out with a specific description, use the <code>-d</code> or <code>--description</code>
+option:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out -d Quit</b>
+Clocked out: 2010/10/07 13:44:51
+</pre></td></tr></table>
+
+<p>An entry will be appended to the end of the <code>timeclock</code> file as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">o 2010/10/07 13:44:51 Quit
+</pre></td></tr></table>
+
+<p>For descriptions containing spaces, ensure the option is surrounded
+with quotes, thus:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><b># timeclockj out --description &quot;Had to leave early, work pending.&quot;</b>
+Clocked out: 2010/10/07 13:44:51
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Generating-Reports"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-Out" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Generating-Reports-1"></a>
+<h2 class="section">3.4 Generating Reports</h2>
+
+<p>Reports against <code>timeclock</code> files can be made. The
+<code>report</code> command is used to print information
+about individual projects, or all projects in a file. In addition to
+the common command line options given in <a href="#Common-Command-Line-Options">Common Command Line Options</a>,
+<code>report</code> command also supports the following options:
+</p>
+<ul>
+<li>
+<code>-e,--end-date &lt;arg&gt;</code> Specify the end date. Clock periods after to this will not be included. (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+</li><li>
+<code>-s,--start-date &lt;arg&gt;</code> Specify the start date. Clock periods prior to this will not be included. (format yyyy/mm/dd or yyyy/mm/dd-hh:mm:ss)
+
+</li><li>
+<code>-p,--project &lt;arg&gt;</code> Print report for the specified project. The default
+                      (no-name) project is defined as &quot;&lt;default&gt;&quot;, surrounded with quotes for
+                      report purposes.
+
+</li><li>
+<code>-a,--all</code> Print reports for all projects.
+
+</li><li>
+<code>-m,--html</code> Instead of outputing data in unmarked-up text, print
+the report in  HTML.
+
+</li><li>
+<code>-o,--output &lt;arg&gt;</code> Instead of printing output to stdout, write to
+specified file. If the file already exists, it is over-written.
+
+</li></ul>
+
+<p>Use quotes to report a project name using the <code>-p</code> (or
+<code>--project</code> option that contains spaces:
+</p>
+<p><code>timeclockj-generate-report -p &quot;Test With Spaces&quot;</code>
+</p>
+<p>&hellip;generates a report for the <em>Test With Spaces</em> project.
+</p>
+
+<hr size="6">
+<a name="timeclockj-for-the-Desktop"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Generating-Reports" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#UI-Configuration" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Command-Line-Use" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="timeclockj-for-the-Desktop-1"></a>
+<h1 class="chapter">4. timeclockj for the Desktop</h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#UI-Configuration">4.1 UI Configuration</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-In-With-the-UI">4.2 Clocking In With the UI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-Out-With-the-UI">4.3 Clocking Out With the UI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Generating-Reports-With-the-UI">4.4 Generating Reports With the UI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Getting-Help">4.5 Getting Help</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#The-About-Dialog">4.6 The About Dialog</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Exiting">4.7 Exiting</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<p>The System tray user interface <code>timeclockj-gui</code> enables users to
+clock in and out of tasks, create new projects and tasks, via a simple
+interface. The application sits in the windowing &rsquo;tray&rsquo;, known as the
+<em>Task Bar</em> in Windows as a clock icon. The following image shows
+<code>timeclockj</code> running in the Task Bar on Windows as a small
+clock:
+</p>
+<img src="images/timeclockj-sys-tray-windows.png" alt="images/timeclockj-sys-tray-windows">
+
+<p>&hellip;and on Ubuntu Linux:
+</p>
+<img src="images/timeclockj-sys-tray-linux.png" alt="images/timeclockj-sys-tray-linux">
+
+<p>To access the main functions of the application, a right-click is made
+on the icon which then brings up a menu.
+</p>
+<p>When the application first starts, it determines if a clock is
+already in progress (i.e. has not been clocked out). The user interface
+only permits a clock-in to occur if a clock-out was the last line
+detected in the <code>timeclock</code> file. Likewise, a clock-out
+can only occur if the last line in the file was a clock-in.
+</p>
+<p>The following image shows the basic user interface displayed when the
+user right-clicks on the clock icon:
+</p>
+<img src="images/timeclockj-basic.png" alt="images/timeclockj-basic">
+
+<hr size="6">
+<a name="UI-Configuration"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-With-the-UI" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="UI-Configuration-1"></a>
+<h2 class="section">4.1 UI Configuration</h2>
+
+<p>Several command-line options are available when starting the UI. As well
+as the options given in <a href="#Common-Command-Line-Options">Common Command Line Options</a>, the following
+options are available:
+</p>
+<ul>
+<li>
+<code>-i,--interval &lt;arg&gt;</code> Set time (seconds) for time to wait before
+                         checking if file has changed. Default is 1. Use with
+<code>--reload-on-change</code>
+
+</li><li>
+<code>-d,--report-dir &lt;arg&gt;</code> Use the specified directory to write reports to;
+                         will be created if it does not exist. Defaults to the user&rsquo;s home
+                         directory in a file named &lsquo;<tt>.timeclockj/reports</tt>&rsquo;
+
+</li><li>
+<code>-r,--reload-on-change</code> If file has changed, reload. Use with <code>--interval</code>
+
+
+</li></ul>
+
+<hr size="6">
+<a name="Clocking-In-With-the-UI"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#UI-Configuration" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-Out-With-the-UI" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-With-the-UI-1"></a>
+<h2 class="section">4.2 Clocking In With the UI</h2>
+
+<p>Clock-in by right-clicking the tray icon and selecting <code>Clock In</code>. Several
+options will be available. If the <code>timeclock</code> file contains other projects,
+these are listed under the <code>Clock In</code> menu. The &lsquo;default&rsquo; (i.e. project
+with no name) project is given as <code>&lt;default&gt;</code>.
+</p>
+<p>The following image illustrates this, along with several other projects available
+for clocking-in:
+</p>
+<img src="images/timeclockj-clock-in.png" alt="images/timeclockj-clock-in">
+
+<p>Clocking-in to the selected project will cause a new line to be added to the
+<code>timeclock</code> file.
+</p>
+<p>To create a new project, select <code>Clock In</code>, then select <code>New Project</code>.
+A dialog will be presented:
+</p>
+<img src="images/timeclockj-enter-project-name.png" alt="images/timeclockj-enter-project-name">
+
+<p>Enter the project name then select <code>OK</code>.
+</p>
+<p>Once clocked in, the menu will change; the <code>Clock Out</code> menu will
+become enabled and the <code>Clock In</code> menu will become disabled.
+</p>
+<p>Several options can also be set when clocking-in. Selecting
+<code>Clock In With Options...</code> will present the following dialog:
+</p>
+<img src="images/timeclockj-clockin-with-options.png" alt="images/timeclockj-clockin-with-options">
+
+<p>Several options are available, each with a checkbox. If the checkbox is not
+selected when the user selects <em>OK</em>, that field is not used as part
+of the clock-in. The options are as follows:
+</p>
+<ul>
+<li> date checkbox with date field; selecting the checkbox allows a user
+to enter a date in the format <em>yyyy-mm-dd</em>.
+
+</li><li> time checkbox with time field; selecting the checkbox allows a user
+to enter a time in the format <em>hh:mm</em>.
+
+</li><li> project-list selector. The selected project will be used to clock-in with.
+Furthermore, new projects can be created from the list option
+<em>New Project</em>.
+
+</li></ul>
+
+<p>Losing focus of any date or time field (by selecting another UI field) will
+cause the newly entered date/time to be parsed, either in the format
+<em>yyyy-mm-dd</em> (for dates) and <em>hh:mm</em> (for times). Failure to enter
+a correct date or time will result in an error dialog being displayed,
+and the field will become disabled and the checkbox for the date or time will
+become unselected.
+</p>
+<hr size="6">
+<a name="Clocking-Out-With-the-UI"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-With-the-UI" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Generating-Reports-With-the-UI" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-With-the-UI-1"></a>
+<h2 class="section">4.3 Clocking Out With the UI</h2>
+
+<p>To clock out of the current project, select <code>Clock Out '[projectName]'</code>
+where <em>projectName</em> is the name of the currently clocked-in project.
+</p>
+<p>The currently clocked-in project is always displayed as a clock-out option
+as the first option in the popup menu from the tray icon. In the following
+diagram, the <em>Documentation</em> project is currently clocked-in,
+and is therefore available to be clocked-out with the first menu item:
+</p>
+<img src="images/timeclockj-clock-out.png" alt="images/timeclockj-clock-out">
+
+<p>Note that two clock-out options are given; the first is for clocking-out
+without a description. This clocks-out the current project.
+The second option allows a description, date and time to be
+added, and an input screen will be shown allowing text to be entered
+against the clocked-out time period:
+</p>
+<img src="images/timeclockj-clockout-with-options.png" alt="images/timeclockj-clockout-with-options">
+
+<p>Several options are available, each with a checkbox. If the checkbox is not
+selected when the user selects <em>OK</em>, that field is not used as part
+of the clock-out. The options are as follows:
+</p>
+<ul>
+<li> date checkbox with date field; selecting the checkbox allows a user
+to enter a date in the format <em>yyyy-mm-dd</em>.
+
+</li><li> time checkbox with time field; selecting the checkbox allows a user
+to enter a time in the format <em>hh:mm</em>.
+
+</li><li> description detailing the cause for clocking-out.
+
+</li></ul>
+
+<p>Losing focus of any date or time field (by selecting another UI field) will
+cause the newly entered date/time to be parsed, either in the format
+<em>yyyy-mm-dd</em> (for dates) and <em>hh:mm</em> (for times). Failure to enter
+a correct date or time will result in an error dialog being displayed,
+and the field will become disabled and the checkbox for the date or time will
+become unselected.
+</p>
+<hr size="6">
+<a name="Generating-Reports-With-the-UI"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-Out-With-the-UI" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Getting-Help" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Generating-Reports-With-the-UI-1"></a>
+<h2 class="section">4.4 Generating Reports With the UI</h2>
+
+<p>Reports can be generated for single projects or all projects.
+</p>
+<p>Several options are available from the report menu:
+</p>
+<ul>
+<li>
+<em>Current project</em> - this will be greyed-out if the user is not currently clocked-in, otherwise the currently clocked-in project will be displayed. Selecting this will produce a report for the current project;
+
+</li><li> the <em>Project</em> menu lists all projects available that exist within the clock file. Selecting an individual project to produce a report for that project;
+
+</li><li> select <em>All Projects</em> to produce a report for every single project in the clock file; and
+
+</li><li> <em>Specify Report Time</em> enables users to select a start and/or end date to produce a specified report for. If selected, a dialog will be presented with the option to enter a start and end date. If no start date is supplied, all reports prior to the end date is prodced. If no end date is supplied, all reports up to the last clock for that project is produced.
+
+</li></ul>
+
+<p>The following illustrates these options:
+</p>
+<img src="images/timeclockj-report.png" alt="images/timeclockj-report">
+
+<p>Generating a report for a single project will result in a <small>HTML</small>
+report being generated on disk (see <a href="#UI-Configuration">UI Configuration</a> for information
+on setting the report file generation directory). Generating a report for
+all projects will result in the reports being produced in an <small>HTML</small>
+page with links to each project and links back to the top of the page.
+</p>
+<p>In each case the newly generated report will be opened using the default
+<small>OS</small> browser.
+</p>
+<hr size="6">
+<a name="Getting-Help"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Generating-Reports-With-the-UI" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#The-About-Dialog" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Getting-Help-1"></a>
+<h2 class="section">4.5 Getting Help</h2>
+
+<p>The <code>timeclockj</code> application also comes with an integrated help system,
+by right-clicking the tray icon and selecting <code>Help Contents</code>. This will bring
+up the JavaHelp user interface:
+</p>
+<img src="images/timeclockj-help.png" alt="images/timeclockj-help">
+
+<p>Note however that there are some rendering problems with <small>HTML</small> using JavaHelp;
+some characters are not marked up correctly. If you find you have problems reading
+the <small>HTML</small> help pages using Java help, try looking at the <small>PDF</small> or
+<small>HTML</small> documents that came as part of the installation (if these
+were not installed on startup, they can be installed by running the installer again
+and selecting an appropriate directory to install the documents to).
+</p>
+<hr size="6">
+<a name="The-About-Dialog"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Getting-Help" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Exiting" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="The-About-Dialog-1"></a>
+<h2 class="section">4.6 The About Dialog</h2>
+
+<p>The About dialog displays information about the contributors and copyright,
+as well as thrid-party libraries used.
+</p>
+<hr size="6">
+<a name="Exiting"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#The-About-Dialog" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Exiting-1"></a>
+<h2 class="section">4.7 Exiting</h2>
+
+<p>Selecting <code>Exit</code> from the tray icon will quit the application.
+</p>
+
+<hr size="6">
+<a name="timeclockj-for-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Exiting" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Configuring-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-the-Desktop" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="timeclockj-for-Android-1"></a>
+<h1 class="chapter">5. timeclockj for Android</h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Configuring-Android">5.1 Configuring Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-In-and-Out-With-Android">5.2 Clocking In and Out With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Generating-Reports-With-Android">5.3 Generating Reports With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Getting-Information-and-Help-With-Android">5.4 Getting Information and Help With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<p>This section deals with configuring Android for use with <code>timeclockj</code>, clocking-in and -out and generating reports. For syncing with Dropbox, see <a href="#Dropbox-Syncronisation">Dropbox Syncronisation</a>.
+</p>
+<p>The first use of <code>timeclockj</code> for Android will typically look like so:
+</p>
+<img src="images/android-basic.png" alt="images/android-basic">
+
+<p>Several tabs are available:
+</p>
+<ul>
+<li> <em>Clock</em> - enable users to clock-in and out, and create new projects to clock-in to. This is dicussed further in <a href="#Clocking-In-and-Out-With-Android">Clocking In and Out With Android</a>.;
+
+</li><li> <em>Report</em> - create reports for one or all projects, view them immediately or write to disk for later viewing, explained in <a href="#Generating-Reports-With-Android">Generating Reports With Android</a>;
+
+</li><li> <em>Info</em> - get information about version, contributors, clock-file information and view the embedded user manual, discussed in <a href="#Getting-Information-and-Help-With-Android">Getting Information and Help With Android</a>.
+
+</li></ul>
+
+<p>The <em>Sync</em> tab for syncing with Dropbox is disabled on first use. It can be enabled via Dropbox preferences, see <a href="#Android-Syncronisation">Android Syncronisation</a> on how to enable this tab.
+</p>
+<p>By default, certain defaults are set - for example, <code>timeclockj</code> expects to be able to read and write a file for clocking-in and -out of that exists on the <small>SD</small> card. To see what the default settings are and to change defeaults, see <a href="#Configuring-Android">Configuring Android</a>.
+</p>
+<hr size="6">
+<a name="Configuring-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Configuring-Android-1"></a>
+<h2 class="section">5.1 Configuring Android</h2>
+
+<p>Before using Android, decide how you wish to configure your basic settings. By default, <code>timeclockj</code> stores it&rsquo;s data according to the following rules:
+</p>
+<ul>
+<li> All data is stored on the SD card. This is so that the &lsquo;<tt>.timelog</tt>&rsquo; file is readable and editable by users, and that the reports generated are freely accessible;
+
+</li><li> the main file used for clocking-in and -out, is stored in the root of the SD card; the default name of the clock file is &lsquo;<tt>.timelog</tt>&rsquo;; if there is no such file, it is created when first clocking in;
+
+</li><li> reports are generated in the directory &lsquo;<tt>.timeclockj-reports</tt>&rsquo;
+
+</li></ul>
+
+<p><code>timeclockj</code> can be configured by pressing the setup button when viewing the <em>Clock</em>, <em>Report</em> or <em>Info</em> tabs, then selecting the phone&rsquo;s <em>Menu</em> button. Two options will be presented, <em>Local File Storage</em> and <em>Dropbox File Storage</em>:
+</p>
+<img src="images/android-setup.png" alt="images/android-setup">
+
+<p>Dropbox configuration is covered in <a href="#Android-Syncronisation">Android Syncronisation</a>. Use <em>Local File Storage</em> to change the default settings for your time clock file and report generation options. Selecting <em>Local File Storage</em> will present the following screen:
+</p>
+<img src="images/android-setup-local.png" alt="images/android-setup-local">
+
+<p>Unchecking the <em>Store data on SD Card</em> option will disable all options for this screen and will save the <code>timeclock</code> data in the private application area. There are two drawbacks to not saving data directly to the SD card: Dropbox synchronisation will not work, and reports cannot be generated to disk (they can be generated, just not saved).
+</p>
+<p>The options when storing data to the SD card are:
+</p>
+<ul>
+<li>
+<em>Timeclock Directory</em>: By default this is blank, meaning the <code>timeclock</code> file will be saved to the root of the SD card. If a directory name is given, it must already exist otherwise an error will occur. Separate directory names with a forward slash (&lsquo;<tt>/</tt>&rsquo;). The case of the characters of the directory names is important - if you have a directory named &lsquo;<tt>Apps/myTimeclock</tt>&rsquo; and wish to store <code>timeclock</code> data there, entering &lsquo;<tt>apps/myTimeclock</tt>&rsquo; will fail - because the case of the characters is different in both cases (in this case the first character).
+
+</li><li>
+<em>Timeclock File</em>: The name of the file to save. By default this is &lsquo;<tt>.timelog</tt>&rsquo;. If the specified file does not exist on startup, it is created providing there are no permission issues. The file is saved in the <em>Timeclock Directory</em>, if the user has specified the directory and the directory exists, otherwise the file is saved on the root of the SD card (unless the user decides to store the <code>timeclock</code> file within the private application area).
+
+</li><li>
+<em>TimeClock Reports</em>:
+The name of the directory to write reports to relative to the root of the SD card. By default this is &lsquo;<tt>timeclockj-reports</tt>&rsquo;, but does not need to exist - it is created for you. Note that if you wish to store the <code>timeclock</code> file in the same directory as your reports, ensure that the <em>TimeClock Reports</em> directory is the same as the <em>TimeClock Directory</em> setting.
+
+</li></ul>
+
+<hr size="6">
+<a name="Clocking-In-and-Out-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Configuring-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Setting-the-Date-and-Time" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-and-Out-With-Android-1"></a>
+<h2 class="section">5.2 Clocking In and Out With Android</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Setting-the-Date-and-Time">5.2.1 Setting the Date and Time</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-In-With-Android">5.2.2 Clocking In With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Clocking-Out-With-Android">5.2.3 Clocking Out With Android</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<p>Clocking-in is the process of selecting (or creating) a project and then selecting the <em>Clock In</em> button, and is covered in <a href="#Clocking-In-With-Android">Clocking In With Android</a>. Clocking-out is the process of clocking out of the currently clocked-in project, along with a description of the clock-activity, covered in <a href="#Clocking-Out-With-Android">Clocking Out With Android</a>. Whether clocking-in or -out, if no date or time is specified, the current device date and time is used. Users can optionally set the date and time for clocking-in and -out, covered in <a href="#Setting-the-Date-and-Time">Setting the Date and Time</a>.
+</p>
+<p>Once clocked-in, no other project can be clocked-in - that is, only a clock-out can occur once clocked-in. Likewise, once clocked-out, no other clock-outs can occur until clocked-in again.
+</p>
+<hr size="6">
+<a name="Setting-the-Date-and-Time"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Setting-the-Date-and-Time-1"></a>
+<h3 class="subsection">5.2.1 Setting the Date and Time</h3>
+
+<p>Prior to clocking-in or -out, the date and time can be changed. If neither checkbox for date and time is selected, the date and time is specified as the current device time when clocking-in or -out. For example, setting the date but not the time means that when the clock occurs, the device&rsquo;s time will be used (but not device date). Likewise, not setting
+<i>both</i> date and time implies that both are obtained from the device date and time when the clock occurs. Setting the date can be useful when a user has forgotten to clock in, or knows when a clock must occur but knows that they&rsquo;ll not have the device to hand.
+</p>
+<p>Be aware that users are expected to enter valid, meaningful dates. Setting the clock-out time to be <i>earlier</i> than the clock-in time will result in unpredictable behaviour when producing reports.
+</p>
+<p>To set the date, select the <em>Specify date</em> checkbox. A dialog will be presented:
+</p>
+<img src="images/android-clock-date.png" alt="images/android-clock-date">
+
+<p>Edit the date as appropriate and select <em>Set</em> to accept the date. To cancel, simply select <em>Cancel</em>. The date will ony ever be used if the <em>Specify date</em> checkbox is set. If <em>Set</em> is selected, the new date will be displayed in the text beneath the button to clock-in or -out. To set the time, select the <em>Specify time</em> checkbox. A dialog will be presented:
+</p>
+<img src="images/android-clock-time.png" alt="images/android-clock-time">
+
+<p>Edit the date as appropriate and select <em>Set</em> to accept the time. To cancel, simply select <em>Cancel</em>. The time will ony ever be used if the <em>Specify time</em> checkbox is set. If <em>Set</em> is selected, the new time will be displayed in the text beneath the button to clock-in or -out.
+</p>
+<hr size="6">
+<a name="Clocking-In-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Setting-the-Date-and-Time" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-Out-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-In-With-Android-1"></a>
+<h3 class="subsection">5.2.2 Clocking In With Android</h3>
+
+<p>The clock tab, when not clocked-in, has a screen similar to the following:
+</p>
+<img src="images/android-basic.png" alt="images/android-basic">
+
+<p>The clock-in screen contains the following:
+</p>
+<ul>
+<li> Clock status coloured red: &quot;Not currently clocked-in&quot;;
+
+</li><li> checkboxes for specifying the date and time of the clock-in;
+
+</li><li> a drop-down list for selecting the project to clock-in with (with <em>Gym</em> selected in the image), with the option to create a new project;
+
+</li><li> the <em>Clock In</em> button to clock-in; and
+
+</li><li> text underneath the <em>Clock In</em> button detailing the next clock action; in this case, it states that the next clock-in will be with project <em>Gym</em> with the
+current date and time 12:00. Editing any of the fields on this screen will update this text.
+
+</li></ul>
+
+<p>Clock-in by selecting the appropriate project from the drop-down list, and then selecting <em>Clock In</em>. Several options are available to clock-in via the drop-down list:
+</p>
+<ul>
+<li>
+Clock-in to the <em>&lt;default&gt;</em> (no-name) project;
+
+</li><li>
+Create a new project by selecting <em>New Project...</em>
+
+</li><li>
+Select a project that has already been created from selecting <em>New Project</em> previously.
+
+</li></ul>
+
+<p>The following image illustrates basic options for the default project, several other projects (<em>Gym</em> and <em>Spanish Course</em>) and the <em>New Project</em> option:
+</p>
+<img src="images/android-new-project-with-existing-projects.png" alt="images/android-new-project-with-existing-projects">
+
+<p>Selecting an existing project will ensure that the currently-selected project is displayed as the next project to clock-in with.
+</p>
+<p>To create a new project, select <code>New Project...</code> from the drop-down list. A dialog will be presented:
+</p>
+<img src="images/android-new-project-dialog.png" alt="images/android-new-project-dialog">
+
+<p>Enter the project name then select <code>OK</code>. The new project will be automatically clocked-in. Project names may contain any combination of alpha-numeric characters, spaces and
+underscore (<code>_</code>) characters.
+</p>
+<p>Once clocked in, the screen will change. The <em>Clock In</em> button will now say <em>Clock Out</em>, the project drop-down list will disappear and a new checkbox will appear for adding a description.
+</p>
+<hr size="6">
+<a name="Clocking-Out-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-In-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Generating-Reports-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Clocking-In-and-Out-With-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Clocking-Out-With-Android-1"></a>
+<h3 class="subsection">5.2.3 Clocking Out With Android</h3>
+
+<p>The clock tab, when clocked-in, has a screen similar to the following:
+</p>
+<img src="images/android-pre-clockout.png" alt="images/android-pre-clockout">
+
+<p>The clock-in screen contains the following:
+</p>
+<ul>
+<li> Clock status, coloured green: &quot;Status: Currently clocked-in to <em>Gym</em>&quot;, or whatever the currently clocked-in project is;
+
+</li><li> checkboxes for specifying the date and time of the clock-out. This button is checked, and the time is displayed in the text beneath the <em>Clock Out</em> button;
+
+</li><li> a checkbox to enter a description, detailing the reason for clocking-out. This button is checked, and the description is displayed in the text beneath the <em>Clock Out</em> button;
+
+</li><li> the <em>Clock Out</em> button to clock-out.
+
+</li><li> text underneath the <em>Clock Out</em> button detailing the next clock action; in this case, it states that the clock out will occur with the current clocked-in project
+<em>Gym</em>, with current date, time 14:00, containing description <em>Standard workout, 3 sets x 12 reps</em>. Editing any of the fields on this screen will update this text.
+
+</li></ul>
+
+<p>To clock out of the current project, click the <code>Clock Out</code> button.
+</p>
+<p>A description can be added when clocking-out. Simply check the <em>Add Description</em> checkbox, then select clock-out. A dialog will be presented offering the opportunity to add a description. To add the description, enter required text then select <em>OK</em>. Clicking <em>Cancel</em> will return the user to the main screen and no clock-out will be performed.
+</p>
+<p>The description checkbox, when selected, will provide a dialog for entering a description.
+</p>
+<img src="images/android-clock-out-description.png" alt="images/android-clock-out-description">
+
+<p>Select <em>OK</em> to accept the description or <em>Cancel</em> to disregard your changes.
+</p>
+<p>Once clocked out, the screen will change. The <em>Clock Out</em> button will now say <em>Clock In</em>, the project drop-down list will re-appear and the checkbox for adding a description will disappear.
+</p>
+<hr size="6">
+<a name="Generating-Reports-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Clocking-Out-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Getting-Information-and-Help-With-Android" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Generating-Reports-With-Android-1"></a>
+<h2 class="section">5.3 Generating Reports With Android</h2>
+
+<p>Reports can be generated for single projects or all projects. Note that reports can only be generated once the first clock-in has occurred. Prior to the first clock-in, the report generation button on the report tab is disabled. 
+</p>
+<p>The Android report screen contains several options once a user has at least
+one clock-in:
+</p>
+<img src="images/android-reports.png" alt="images/android-reports">
+
+<ul>
+<li> choose <code>Select Project</code> to view a report for any project, then use the dropdown box to select a project;
+
+</li><li> select <code>All Projects</code> to view reports for all projects;
+
+</li><li> <code>Write to file</code> is used to write the report to the SD card - see <a href="#Configuring-Android">Configuring Android</a> on how to set the directory to write files to or find out the default directory for file writing;
+
+</li><li> <code>View in browser</code> is used to view reports immediately in a browser;
+
+</li><li> by selecting <code>Specify start date</code> the user can print reports from the given start date; and
+
+</li><li> <code>Specify end date</code> will mean that reports are only generated up to the given date
+
+</li></ul>
+
+<p>When the apporpriate choices have been made, select the relevant checkboxes to either write reports to file or view in a browser (or both), specify start/end dates (if required) then select <code>Produce Reports(/s)</code>.
+</p>
+<p>If you selected to write reports to file, these files will now be generated in the report directory (see <a href="#Configuring-Android">Configuring Android</a>). Selecting <code>View reports in browser</code> will launch the report in the browser.
+</p>
+<hr size="6">
+<a name="Getting-Information-and-Help-With-Android"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Generating-Reports-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Getting-Information-and-Help-With-Android-1"></a>
+<h2 class="section">5.4 Getting Information and Help With Android</h2>
+
+<p>The information tab gives useful information about the version, license, contributors, help pages and file data:
+</p>
+<img src="images/android-info-tab.png" alt="images/android-info-tab">
+
+<p>The different functions of the buttons are as follows:
+</p>
+<ul>
+<li> <em>About</em> button, detailing the version of <code>timeclockj</code> being used, as well as license information and project website;
+
+</li><li> <em>Contributors</em> button, detailing different contributors to the project; 
+
+</li><li> <em>Help</em> button - selecting this will launch the embedded help pages;
+
+</li><li> File data information, such as last modification date.
+
+</li></ul>
+
+
+<hr size="6">
+<a name="Dropbox-Syncronisation"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Getting-Information-and-Help-With-Android" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#GNU-Emacs-Syncronisation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#timeclockj-for-Android" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Dropbox-Syncronisation-1"></a>
+<h1 class="chapter">6. Dropbox Syncronisation</h1>
+
+<p>Dropbox (<a href="http://dropbox.com/">http://dropbox.com/</a>) enables storage of personal files via
+a several different interfaces and can be used to ensure you can sync
+between <code>timeclock</code> files stored on your personal computer
+and files stored on mobile devices.
+</p>
+<p>This section details how to achieve this using the desktop UI
+and Android.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#GNU-Emacs-Syncronisation">6.1 GNU Emacs Syncronisation</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Desktop-UI-Syncronisation">6.2 Desktop UI Syncronisation</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Android-Syncronisation">6.3 Android Syncronisation</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="GNU-Emacs-Syncronisation"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Desktop-UI-Syncronisation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="GNU-Emacs-Syncronisation-1"></a>
+<h2 class="section">6.1 GNU Emacs Syncronisation</h2>
+
+<p>All you need to do with <small>GNU</small> <code>emacs</code> is set the file it uses
+to clock times to a point to a Dropbox directory containing your
+<code>timeclock</code> file. How to change the file name variable
+is already documented at the following <small>URL</small>:
+</p>
+<p><a href="http://www.delorie.com/gnu/docs/emacs/emacs_437.html">http://www.delorie.com/gnu/docs/emacs/emacs_437.html</a>
+</p>
+<hr size="6">
+<a name="Desktop-UI-Syncronisation"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#GNU-Emacs-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Android-Syncronisation" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Desktop-UI-Syncronisation-1"></a>
+<h2 class="section">6.2 Desktop UI Syncronisation</h2>
+
+<p>To enable syncing from the desktop, you need to ensure three
+things are done:
+</p>
+<ul>
+<li>
+Dropbox is installed on your computer;
+
+</li><li>
+the file used by <code>timeclockj</code> is a file in your Dropbox
+storage area - in other words, <code>--file</code> is specified
+to point to a file in your Dropbox storage (see <a href="#UI-Configuration">UI Configuration</a>).
+
+</li><li>
+ensure that the option to reload on file change is enabled
+(see <a href="#UI-Configuration">UI Configuration</a>).
+
+</li></ul>
+
+<p>For example, imagine a user has a <code>timeclock</code> file named
+&lsquo;<tt>.timelog</tt>&rsquo; in a directory named &lsquo;<tt>C:/Apps/timeclockj</tt>&rsquo;; then
+the startup command for running the desktop UI would be:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">timeclockj-gui --file C:/Apps/timeclockj/.timelog --reload-on-change
+</pre></td></tr></table>
+
+<p>Everytime a clock-in or -out occurs, changes are detected automatically
+by Dropbox and will then be available to sync with other devices.
+</p>
+<hr size="6">
+<a name="Android-Syncronisation"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Desktop-UI-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Android-Syncronisation-1"></a>
+<h2 class="section">6.3 Android Syncronisation</h2>
+
+<p>By default, Dropbox syncing is disabled on startup. This applicaiton
+<em>only</em> reads and writes to the name of the file that you specify
+in the Android Dropbox preferences. To enable Drobpox
+syncing, press the setup button on your phone when on the main screen,
+select <code>Setup</code>, then choose <code>Dropbox File Storage</code>. The
+following configuration screen will appear:
+</p>
+<img src="images/android-setup-dropbox.png" alt="images/android-setup-dropbox">
+
+<p>The configuration options are as follows:
+</p>
+<ul>
+<li>
+<em>Dropbox Directory</em>: By default this is blank, meaning
+the <code>timeclock</code> file will be saved to the root of your
+Dropbox storage area. Separate directory names with
+a forward slash (&lsquo;/&rsquo;). The case of the characters
+of the directory names is important - if you have a directory named
+&lsquo;<tt>Apps/myTimeclock</tt>&rsquo; and wish to store <code>timeclock</code> data there,
+entering &lsquo;<tt>apps/myTimeclock</tt>&rsquo; will fail - because the case of the
+characters is different in both cases (in this case the first character).
+
+<p>This is the directory that the file exists on the user&rsquo;s Dropbox account - do not get it confused with <em>Timeclock Directory</em> in <a href="#Configuring-Android">Configuring Android</a>, since that is used for where the file is stored locally on the user&rsquo;s SD card. By contrast, <em>Dropbox Directory</em> is the directory that the file resides within the user&rsquo;s Dropbox account.
+</p>
+</li></ul>
+
+<p>The name of the file written is the name specified in your local (SD card)
+storage - see <a href="#Configuring-Android">Configuring Android</a>. Thus, if the local file
+was specified as a file named &lsquo;<tt>myTickClock.txt</tt>&rsquo;, performing 
+syncronisation with Dropbox will result in that file being pushed
+or pulled.
+</p>
+<p>Once the <em>Syncronise with Dropbox</em> checkbox is checked, the
+Dropbox sync tab will become available as the far-right tab:
+</p>
+<img src="images/android-basic-with-dropbox.png" alt="images/android-basic-with-dropbox">
+
+<p>Pushing this button will result in the Dropbox screen being displayed:
+</p>
+<img src="images/android-dropbox-pre-login.png" alt="images/android-dropbox-pre-login">
+
+<p>First time use will immediately load the authentication page via the default browser:
+</p>
+<img src="images/android-dropbox-enter-login-details.png" alt="images/android-dropbox-enter-login-details">
+
+<p>Now enter your Dropbox username (typically an email address) and your Dropbox password, and verification will occur. Note that the Android <code>TimeClockJ</code> application does not store these details since all authentication is performed by the system browser. Select <em>Sign in</em> to sign in. Once complete, the following screen will appear - select whichever is most appropriate to you:
+</p>
+<img src="images/android-dropbox-confirm-details.png" alt="images/android-dropbox-confirm-details">
+
+<p>You&rsquo;ll now be presented with the option to allow the <code>TimeClockJ</code> application access to read and write to your timeclock file:
+</p>
+<img src="images/android-dropbox-login-first-time.png" alt="images/android-dropbox-login-first-time">
+
+<p>Selecting <em>Allow</em> will return you to the <em>Sync</em> tab, where the <em>Push</em> and <em>Pull</em> buttons will be enabled. The login button will now change to a logout button - this forces the application to re-authenticate every time, and should not really be required. If you do not logout, it offers the convenience of always being able to push and pull your <em>timeclock</em> file when you start the application afresh every time. The <em>Push</em> and <em>Pull</em> buttons work as follows:
+</p>
+<ul>
+<li>
+Use <em>Push</em> to push your locally stored <code>timeclock</code> file
+to your remote Dropbox account. This will overwrite the remote file
+(if it exists) or create it if it does not exist;
+
+</li><li>
+Use <em>Pull</em> to pull the remote file from Dropbox to your locally
+stored file. This will overwrite your local file with the version
+stored in your Dropbox account.
+
+</li></ul>
+
+<p>An error will occur if there were any problems syncing; if this is the
+case, you will have to perform the operation again. Each time you perform
+a push or a pull, both buttons will become disabled until the sync has finished.
+</p>
+
+<hr size="6">
+<a name="Help-and-Contribution"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Android-Syncronisation" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Dropbox-Syncronisation" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Help-and-Contribution-1"></a>
+<h1 class="chapter">7. Help and Contribution</h1>
+
+<p>Although the project is a few years old, contribution has been sparse
+and patchy at times. <code>timeclockj</code> is in it&rsquo;s second alpha release;
+there are probably many bugs and issues that need resolving.
+</p>
+<p>Please visit <a href="https://sourceforge.net/projects/timeclockj/support">https://sourceforge.net/projects/timeclockj/support</a> for any
+issues to do with feature requests, bug reports or other issues.
+</p>
+<p>If you&rsquo;d like to get involved with <code>timeclockj</code> on any level (development,
+user testing, documentation), feel free to contact the <code>timeclockj</code>
+team at Source Forge, <a href="https://sourceforge.net/projects/timeclockj">https://sourceforge.net/projects/timeclockj</a>.
+</p>
+
+<hr size="6">
+<a name="SEC_Foot"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1>Footnotes</h1>
+<h3><a name="FOOT1" href="#DOCF1">(1)</a></h3>
+<p><a href="http://www.gnu.org/software/emacs/">http://www.gnu.org/software/emacs/</a>
+</p><hr size="1">
+<a name="SEC_Contents"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1>Table of Contents</h1>
+<div class="contents">
+
+<ul class="toc">
+  <li><a name="toc-Introduction-1" href="#Introduction">1. Introduction</a></li>
+  <li><a name="toc-Downloading-and-Installing-1" href="#Downloading-and-Installing">2. Downloading and Installing</a>
+  <ul class="toc">
+    <li><a name="toc-Downloading-1" href="#Downloading">2.1 Downloading</a></li>
+    <li><a name="toc-Installing-and-System-Tray-Integration-1" href="#Installing-and-System-Tray-Integration">2.2 Installing and System Tray Integration</a>
+    <ul class="toc">
+      <li><a name="toc-Installation-_002d-all-platforms-1" href="#Installation-_002d-all-platforms">2.2.1 Installation - all platforms</a></li>
+      <li><a name="toc-Windows-1" href="#Windows">2.2.2 Windows</a>
+      <ul class="toc">
+        <li><a name="toc-Windows-PATH-1" href="#Windows-PATH">2.2.2.1 Windows PATH</a></li>
+        <li><a name="toc-Windows-Startup-1" href="#Windows-Startup">2.2.2.2 Windows Startup</a></li>
+      </ul></li>
+      <li><a name="toc-Linux-1" href="#Linux">2.2.3 Linux</a>
+      <ul class="toc">
+        <li><a name="toc-Linux-PATH-1" href="#Linux-PATH">2.2.3.1 Linux PATH</a></li>
+        <li><a name="toc-Linux-Startup-1" href="#Linux-Startup">2.2.3.2 Linux Startup</a></li>
+      </ul></li>
+      <li><a name="toc-Mac-1" href="#Mac">2.2.4 Mac</a>
+      <ul class="toc">
+        <li><a name="toc-Mac-PATH-1" href="#Mac-PATH">2.2.4.1 Mac PATH</a></li>
+        <li><a name="toc-Mac-Startup-1" href="#Mac-Startup">2.2.4.2 Mac Startup</a></li>
+      </ul>
+</li>
+    </ul>
+</li>
+  </ul></li>
+  <li><a name="toc-Command-Line-Use-1" href="#Command-Line-Use">3. Command Line Use</a>
+  <ul class="toc">
+    <li><a name="toc-Common-Command-Line-Options-1" href="#Common-Command-Line-Options">3.1 Common Command Line Options</a></li>
+    <li><a name="toc-Clocking-In-1" href="#Clocking-In">3.2 Clocking In</a></li>
+    <li><a name="toc-Clocking-Out-1" href="#Clocking-Out">3.3 Clocking Out</a></li>
+    <li><a name="toc-Generating-Reports-1" href="#Generating-Reports">3.4 Generating Reports</a></li>
+  </ul></li>
+  <li><a name="toc-timeclockj-for-the-Desktop-1" href="#timeclockj-for-the-Desktop">4. timeclockj for the Desktop</a>
+  <ul class="toc">
+    <li><a name="toc-UI-Configuration-1" href="#UI-Configuration">4.1 UI Configuration</a></li>
+    <li><a name="toc-Clocking-In-With-the-UI-1" href="#Clocking-In-With-the-UI">4.2 Clocking In With the UI</a></li>
+    <li><a name="toc-Clocking-Out-With-the-UI-1" href="#Clocking-Out-With-the-UI">4.3 Clocking Out With the UI</a></li>
+    <li><a name="toc-Generating-Reports-With-the-UI-1" href="#Generating-Reports-With-the-UI">4.4 Generating Reports With the UI</a></li>
+    <li><a name="toc-Getting-Help-1" href="#Getting-Help">4.5 Getting Help</a></li>
+    <li><a name="toc-The-About-Dialog-1" href="#The-About-Dialog">4.6 The About Dialog</a></li>
+    <li><a name="toc-Exiting-1" href="#Exiting">4.7 Exiting</a></li>
+  </ul></li>
+  <li><a name="toc-timeclockj-for-Android-1" href="#timeclockj-for-Android">5. timeclockj for Android</a>
+  <ul class="toc">
+    <li><a name="toc-Configuring-Android-1" href="#Configuring-Android">5.1 Configuring Android</a></li>
+    <li><a name="toc-Clocking-In-and-Out-With-Android-1" href="#Clocking-In-and-Out-With-Android">5.2 Clocking In and Out With Android</a>
+    <ul class="toc">
+      <li><a name="toc-Setting-the-Date-and-Time-1" href="#Setting-the-Date-and-Time">5.2.1 Setting the Date and Time</a></li>
+      <li><a name="toc-Clocking-In-With-Android-1" href="#Clocking-In-With-Android">5.2.2 Clocking In With Android</a></li>
+      <li><a name="toc-Clocking-Out-With-Android-1" href="#Clocking-Out-With-Android">5.2.3 Clocking Out With Android</a></li>
+    </ul></li>
+    <li><a name="toc-Generating-Reports-With-Android-1" href="#Generating-Reports-With-Android">5.3 Generating Reports With Android</a></li>
+    <li><a name="toc-Getting-Information-and-Help-With-Android-1" href="#Getting-Information-and-Help-With-Android">5.4 Getting Information and Help With Android</a></li>
+  </ul></li>
+  <li><a name="toc-Dropbox-Syncronisation-1" href="#Dropbox-Syncronisation">6. Dropbox Syncronisation</a>
+  <ul class="toc">
+    <li><a name="toc-GNU-Emacs-Syncronisation-1" href="#GNU-Emacs-Syncronisation">6.1 GNU Emacs Syncronisation</a></li>
+    <li><a name="toc-Desktop-UI-Syncronisation-1" href="#Desktop-UI-Syncronisation">6.2 Desktop UI Syncronisation</a></li>
+    <li><a name="toc-Android-Syncronisation-1" href="#Android-Syncronisation">6.3 Android Syncronisation</a></li>
+  </ul></li>
+  <li><a name="toc-Help-and-Contribution-1" href="#Help-and-Contribution">7. Help and Contribution</a></li>
+</ul>
+</div>
+<hr size="1">
+<a name="SEC_About"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Help-and-Contribution" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1>About This Document</h1>
+<p>
+  This document was generated by <em>rich</em> on <em>July 26, 2017</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+</p>
+<p>
+  The buttons in the navigation panels have the following meaning:
+</p>
+<table border="1">
+  <tr>
+    <th> Button </th>
+    <th> Name </th>
+    <th> Go to </th>
+    <th> From 1.2.3 go to</th>
+  </tr>
+  <tr>
+    <td align="center"> [ &lt; ] </td>
+    <td align="center">Back</td>
+    <td>Previous section in reading order</td>
+    <td>1.2.2</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &gt; ] </td>
+    <td align="center">Forward</td>
+    <td>Next section in reading order</td>
+    <td>1.2.4</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &lt;&lt; ] </td>
+    <td align="center">FastBack</td>
+    <td>Beginning of this chapter or previous chapter</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td align="center"> [ Up ] </td>
+    <td align="center">Up</td>
+    <td>Up section</td>
+    <td>1.2</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &gt;&gt; ] </td>
+    <td align="center">FastForward</td>
+    <td>Next chapter</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td align="center"> [Top] </td>
+    <td align="center">Top</td>
+    <td>Cover (top) of document</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [Contents] </td>
+    <td align="center">Contents</td>
+    <td>Table of contents</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [Index] </td>
+    <td align="center">Index</td>
+    <td>Index</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [ ? ] </td>
+    <td align="center">About</td>
+    <td>About (help)</td>
+    <td> &nbsp; </td>
+  </tr>
+</table>
+
+<p>
+  where the <strong> Example </strong> assumes that the current position is at <strong> Subsubsection One-Two-Three </strong> of a document of the following structure:
+</p>
+
+<ul>
+  <li> 1. Section One
+    <ul>
+      <li>1.1 Subsection One-One
+        <ul>
+          <li>...</li>
+        </ul>
+      </li>
+      <li>1.2 Subsection One-Two
+        <ul>
+          <li>1.2.1 Subsubsection One-Two-One</li>
+          <li>1.2.2 Subsubsection One-Two-Two</li>
+          <li>1.2.3 Subsubsection One-Two-Three &nbsp; &nbsp;
+            <strong>&lt;== Current Position </strong></li>
+          <li>1.2.4 Subsubsection One-Two-Four</li>
+        </ul>
+      </li>
+      <li>1.3 Subsection One-Three
+        <ul>
+          <li>...</li>
+        </ul>
+      </li>
+      <li>1.4 Subsection One-Four</li>
+    </ul>
+  </li>
+</ul>
+
+<hr size="1">
+<p>
+ <font size="-1">
+  This document was generated by <em>rich</em> on <em>July 26, 2017</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+@node Introduction
+@chapter Introduction
+
+@command{timeclockj} is a desktop and mobile phone application used
+to track time spent on different projects, both personal, business or
+leisure. Keeping track of projects means you can produce reports
+against them, and tally the hours you've spent over days, weeks and
+months and see when you're most active.
+
+The mobile Android version of @command{timeclockj} uses Dropbox
+to syncronise files between your mobile and desktop. By doing this, all devices
+can access and use the same @command{timeclock} file. Mobile
+devices use @emph{push} and @emph{pull} commands to sync their mobile
+devices directly with Dropbox.
+
+@command{timeclockj} provides libraries and tools for reading,
+viewing and writing @sc{gnu} @command{emacs} mode @command{timeclock} files.
+@sc{gnu} @command{emacs} "@dots{is an extensible, customizable text editor}"
+@footnote{@url{http://www.gnu.org/software/emacs/}} that contains a mode -
+known as @command{timeclock} mode - for clocking-in and -out of projects.
+It is this mode for @sc{gnu} @command{emacs} that is the inspiration
+for @command{timeclockj}.
+
+Command-line tools are provided, as is a desktop UI that sits in the
+operating system tray (sometimes called a Task Bar), and a mobile Android
+version. @command{timeclockj} is @i{not} a @command{timeclock} clone - it has different
+commands, different options but the end result is the same -
+manipulating @command{timeclock} files.
+
+A clock in line starts with an @code{i} character, a space, a date of the format 
+@code{yyyy/MM/dd HH:mm:ss}, and an optional string denoting a project. No project
+implies the default (no-name) project is being clocked-in. A clock-out line starts
+with a @code{o} character, date and time (using the format specified for clock-ins)
+with an optional string denoting a description for the clock-out.
+
+Here are some examples of clock lines from a @command{timeclock} file:
+
+@example
+i 2010/10/05 13:28:57 Gym
+o 2010/10/05 14:57:04
+i 2010/10/05 18:29:36 Spanish Course
+o 2010/10/05 20:32:14 Verbs, revised shopping
+i 2010/10/06 09:15:22
+o 2010/10/06 12:09:58
+@end example
+
+Line one shows the @emph{Gym} project being clocked-in at almost 1:30pm,
+and clocked-out at nearly 3pm (line two). @emph{Spanish Course} begins at almost
+6:30pm (line three), and is finished by 8:30pm line four). Finally, on lines
+five and six, the next day from 9:15am to 12:09pm, the default (no-name)
+project is clocked. In the case of the @emph{Gym} and default project, no description
+is giving when clocking-out. With the @emph{Spanish Course} project, the description
+@emph{Verbs, revised shopping} is given.

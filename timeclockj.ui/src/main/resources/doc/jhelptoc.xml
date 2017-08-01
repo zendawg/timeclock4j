@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+  <!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+  <toc version="1.0">
+    <tocitem target="Top" text="Contents">
+      <tocitem target="Top.Introduction" text="Introduction"/>
+      <tocitem target="Top.DownloadingAndInstalling" text="Downloading and Installing"/>
+      <tocitem target="Top.CommandLineUse" text="Command Line Use"/>
+      <tocitem target="Top.DesktopUI" text="TimeClockJ for the Desktop"/>
+      <tocitem target="Top.AndroidUI" text="TimeClockJ for Android"/>
+      <tocitem target="Top.DropboxSync" text="Dropbox Syncronisation"/>
+      <tocitem target="Top.HelpAndContribution" text="Help and Contribution"/>
+      <tocitem target="Top.MainIndex" text="Index">
+        <!--tocitem target="Simple.Explanation.Files" text="Lots of files"/>
+        <tocitem target="Simple.Explanation.Cheater" text="Cheating"/-->
+      </tocitem>
+    </tocitem>
+  </toc>

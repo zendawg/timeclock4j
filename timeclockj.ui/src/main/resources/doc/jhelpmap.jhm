@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+  <!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
+  <map version="1.0">
+    <mapID target="Top" url="timeclockj/index.html"/>
+    <mapID target="Top.Introduction" url="timeclockj/Introduction.html"/>
+    <mapID target="Top.DownloadingAndInstalling" url="timeclockj/Downloading-and-Installing.html"/>
+    <mapID target="Top.CommandLineUse" url="timeclockj/Command-Line-Use.html"/>
+    <mapID target="Top.DesktopUI" url="timeclockj/timeclockj-for-the-Desktop.html"/>
+    <mapID target="Top.AndroidUI" url="timeclockj/timeclockj-for-Android.html"/>
+    <mapID target="Top.DropboxSync" url="timeclockj/Dropbox-Syncronisation.html"/>
+    <mapID target="Top.HelpAndContribution" url="timeclockj/Help-and-Contribution.html"/>
+    <mapID target="Top.MainIndex" url="timeclockj/Main-Index.html"/>
+    <!--mapID target="Simple.Explanation.Files" url="ar01s02.html"/>
+    <mapID target="Simple.Explanation.Cheater" url="ar01s02.html"/>
+    <mapID target="id328078" url="ar01s02.html#cheating"/-->
+  </map>
