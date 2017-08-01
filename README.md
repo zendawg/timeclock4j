@@ -43,3 +43,9 @@ Files are generated in target/docs and produce several new directories for diffe
 # Android
 
 The version of Android has not worked in a long time - there are plans to migrate this to Gradle.
+
+# Synchronisation & Origins
+
+The purpose of `timeclock4j` originally was to enable synchronisation via Dropbox both through CLI, UI (system tray) and Android versions; when a clock-in or -out was performed, the changes would get pushed to Dropbox and the changes detected by any of the applications being ran.
+
+With the deprecation of the Maven Android version, this has now become defunct, although there are plans to re-implement this in the near future.
