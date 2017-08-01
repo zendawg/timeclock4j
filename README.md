@@ -40,6 +40,12 @@ Files are generated in target/docs and produce several new directories for diffe
 
     javahelp/  multi-page-html/  pdf/  single-page-html/
 
+For those that do not have the time (or patience) to install `texinfo` or do not run Linux, the documentation, once built, is deployed to:
+
+    timeclockj.ui/src/main/resources/doc/
+
+Simply open up the `index.html` file kept within that directory with your preferred browser to take a look at the original documentation (which is now out of date).
+
 # Android
 
 The version of Android has not worked in a long time - there are plans to migrate this to Gradle.
