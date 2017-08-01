@@ -2,6 +2,8 @@
 
 Clock-in and -out using old emacs-style .timelog files.
 
+Reports can also be generated.
+
 # Build Instructions: Desktop and CLI
 
 You'll need Apache Maven installed to build the software. To build, run:
