@@ -57,7 +57,7 @@ public class ReportTimePanel {
     return panelClockInOptions;
   }
 
-  void addDateTimeComponents(JPanel panel) {
+  public void addDateTimeComponents(JPanel panel) {
 
     final JCheckBox checkBoxStart = new JCheckBox("Start ("
             + TimeClockParser.DATE_FORMAT.toLowerCase() + ")");
@@ -136,7 +136,7 @@ public class ReportTimePanel {
    * 
    * @return 
    */
-  Date getStartDate() {
+  public Date getStartDate() {
     return startDate;
   }
   
@@ -144,11 +144,11 @@ public class ReportTimePanel {
    * 
    * @return 
    */
-  Date getEndDate() {
+  public Date getEndDate() {
     return endDate;
   }
   
-  String getSelectedProject() {
+  public String getSelectedProject() {
     return comboBoxProjects.getSelectedItem().toString();
   }
 
@@ -157,7 +157,7 @@ public class ReportTimePanel {
    * @param checkBox
    * @param textField
    */
-  void setComponentStates(JCheckBox checkBox, JTextField textField) {
+  public void setComponentStates(JCheckBox checkBox, JTextField textField) {
 
     if (checkBox.isSelected()) {
       textField.setEnabled(true);

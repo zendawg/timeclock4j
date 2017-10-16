@@ -28,91 +28,94 @@ import org.statefive.timeclockj.ClockPeriod;
  */
 public class ReportFactory {
 
-  private static ReportFactory instance;
+    private static ReportFactory instance;
 
-  private ReportFactory() {
+    private ReportFactory() {
 
-  }
-
-  public static ReportFactory getInstance() {
-    if (instance == null) {
-      instance = new ReportFactory();
     }
-    return instance;
-  }
-  
-  /**
-   * 
-   * 
-   * @param projectName
-   * @return 
-   */
-  public ProjectReport getReport(String projectName) {
-    return getReport(projectName, null, null);
-  }
 
-  /**
-   * 
-   * @param projectName
-   * @param dStart
-   * @param dEnd
-   * @return 
-   */
-  public ProjectReport getReport(String projectName, Date dStart, Date dEnd) {
-    ProjectReport report = new ProjectReport();
-    report.setName(projectName);
+    public static ReportFactory getInstance() {
+        if (instance == null) {
+            instance = new ReportFactory();
+        }
+        return instance;
+    }
 
-    List<ClockPeriod> clockPeriods =
-      ClockManager.getInstance().getClockPeriods(projectName);
+    /**
+     *
+     *
+     * @param projectName
+     * @return
+     */
+    public ProjectReport getReport(String projectName) {
+        return getReport(projectName, null, null);
+    }
 
-    long totalTime = 0;
-    Duration longestDuration = new Duration();
+    /**
+     *
+     * @param projectName
+     *
+     * @param dStart start date to produce the reports for, if required; may be
+     * {@code null}.
+     *
+     * @param dEnd end date to produce the reports for, if required; may be
+     * {@code null}.
+     *
+     * @return
+     */
+    public ProjectReport getReport(String projectName, Date dStart, Date dEnd) {
+        ProjectReport report = new ProjectReport();
+        report.setName(projectName);
+
+        List<ClockPeriod> clockPeriods
+                = ClockManager.getInstance().getClockPeriods(projectName);
+
+        long totalTime = 0;
+        Duration longestDuration = new Duration();
 //    Iterator<ClockPeriod> it = clockPeriods.iterator(); it.hasNext() ;
-    for (int i = 0; i < clockPeriods.size(); i++) {
-      ClockPeriod clockPeriod = clockPeriods.get(i);
-      if ((dStart == null || clockPeriod.getClockInTime() >= dStart.getTime())
-              &&
-          (dEnd == null ||
-              (clockPeriod.getClockOutTime() != null
-              &&
-              clockPeriod.getClockOutTime() <= dEnd.getTime()))) {
-        long time = clockPeriod.longValue();
-        Duration duration = long2Duration(time);
-        duration.setStartTime(clockPeriod.getClockInTime());
-        if (clockPeriod.getClockOutTime() == null) {
-          duration.setEndTime(Calendar.getInstance().getTimeInMillis());
-        } else {
-          duration.setEndTime(clockPeriod.getClockOutTime());
+        for (int i = 0; i < clockPeriods.size(); i++) {
+            ClockPeriod clockPeriod = clockPeriods.get(i);
+            if ((dStart == null || clockPeriod.getClockInTime() >= dStart.getTime())
+                    && (dEnd == null
+                    || (clockPeriod.getClockOutTime() != null
+                    && clockPeriod.getClockOutTime() <= dEnd.getTime()))) {
+                long time = clockPeriod.longValue();
+                Duration duration = long2Duration(time);
+                duration.setStartTime(clockPeriod.getClockInTime());
+                if (clockPeriod.getClockOutTime() == null) {
+                    duration.setEndTime(Calendar.getInstance().getTimeInMillis());
+                } else {
+                    duration.setEndTime(clockPeriod.getClockOutTime());
+                }
+                duration.setDescription(clockPeriod.getDescription());
+                totalTime += clockPeriod.longValue();
+                if (duration.longValue() > longestDuration.longValue()) {
+                    longestDuration = duration;
+                }
+                report.addDuration(duration);
+            }
         }
-        duration.setDescription(clockPeriod.getDescription());
-        totalTime += clockPeriod.longValue();
-        if (duration.longValue() > longestDuration.longValue()) {
-          longestDuration = duration;
+
+        report.setLongestClock(longestDuration);
+        report.setTotalTime(totalTime);
+        if (projectName.equals(ClockManager.getInstance().getCurrentProject())) {
+            report.setClockedIn(true);
         }
-        report.addDuration(duration);
-      }
+
+        return report;
     }
 
-    report.setLongestClock(longestDuration);
-    report.setTotalTime(totalTime);
-    if (projectName.equals(ClockManager.getInstance().getCurrentProject())) {
-      report.setClockedIn(true);
+    /**
+     *
+     * @param time
+     * @return
+     */
+    public Duration long2Duration(long time) {
+        Duration duration = new Duration();
+        duration.setHours((int) (time / 60 / 60 / 1000));
+        duration.setMinutes((int) (time / 60 / 1000) % 60);
+        duration.setSeconds((int) (time / 1000) % 60);
+        return duration;
     }
-
-    return report;
-  }
-
-  /**
-   *
-   * @param time
-   * @return
-   */
-  public Duration long2Duration(long time) {
-    Duration duration = new Duration();
-    duration.setHours((int)(time / 60 / 60 / 1000));
-    duration.setMinutes((int)(time / 60 / 1000) % 60);
-    duration.setSeconds((int)(time / 1000) % 60);
-    return duration;
-  }
 
 }

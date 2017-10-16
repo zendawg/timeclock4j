@@ -27,20 +27,23 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * The clock manager is the main API calling point for clocking in and out
+ * of projects. It keeps track of the current status of clock ins and outs,
+ * the current project (if clocked in) as well as all previous clock reports.
+ * 
  * @author rich
  */
 public class ClockManager {
 
   public static final String DEFAULT_PROJECT_STRING = "<default>";
 
-  /** */
+  /** Determine the current clocked in or out status. */
   private boolean clockedIn;
-  /** */
+  /** Instance of the clock manager. */
   private static ClockManager clockManager;
-  /** */
+  /** The currently clocked in project, if clocked in. */
   private String currentProject;
-  /** */
+  /** Map of project-to-clock periods. */
   private Map<String, List<ClockPeriod>> projects =
     new HashMap<String, List<ClockPeriod>>();
 
@@ -123,16 +126,20 @@ public class ClockManager {
   }
 
   /**
-   *
-   * @return
+   * Determine if currently clocked in to a project.
+   * 
+   * @return {@code true} if clocked in to a project currently; {@code false}
+   * otherwise.
    */
   public boolean isClockedIn() {
     return this.clockedIn;
   }
 
   /**
+   * Get the currently clocked in project, if set.
    * 
-   * @return
+   * @return the currently clocked in project, if clocked in; {@code null}
+   * otherwise.
    */
   public String getCurrentProject() {
     return this.currentProject;
@@ -173,10 +180,15 @@ public class ClockManager {
   }
 
   /**
-   *
-   * @param projectName
+   * Get the clock periods for the specified project.
    * 
-   * @return
+   * @param projectName the name of the project to get clock periods for;
+   * if {@code null}, it is assumed the default project is used (see 
+   * {@link #DEFAULT_PROJECT_STRING}).
+   * 
+   * @return a list of clock periods if the specified project has any clock
+   * periods associated with it; if there are no clock periods, {@code null}
+   * is returned.
    */
   public List<ClockPeriod> getClockPeriods(String projectName) {
     List<ClockPeriod> clockPeriods = null;
