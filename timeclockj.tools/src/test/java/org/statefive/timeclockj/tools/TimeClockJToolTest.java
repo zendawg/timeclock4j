@@ -24,6 +24,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
 import java.security.Permission;
+import java.util.regex.Pattern;
 
 import junit.framework.TestCase;
 
@@ -138,11 +139,17 @@ public class TimeClockJToolTest extends TestCase {
       TimeClockJTool.main(args);
     } catch (ExitException e) {
       String output = new String(this.out.toByteArray());
-      String header = "usage: timeclockj [command] [OPTIONS]\n"
-              + "Tool to clock-in and -out and produce reports.\n"
-              + "Commands: in | out | report\n"
-              + "Try timeclockj [command] -h or --help for individual commands.";
-      assertTrue(output.startsWith(header));
+//      String header = "usage: timeclockj [command] [OPTIONS]\n"
+//              + "Tool to clock-in and -out and produce reports.\n"
+//              + "Commands: in | out | report\n"
+//              + "Try timeclockj [command] -h or --help for individual commands.";
+      // Allow for different line endings on different platforms
+      String[] outputLines = Pattern.compile("\r\n|\n|\r").split(output);
+      assertEquals("usage: timeclockj [command] [OPTIONS]", outputLines[0]);
+      assertEquals("Tool to clock-in and -out and produce reports.", outputLines[1]);
+      assertEquals("Commands: in | out | report", outputLines[2]);
+      assertEquals("Try timeclockj [command] -h or --help for individual commands.", outputLines[3]);
+//      assertTrue(output.startsWith(header));
       assertEquals(TimeClockJTool.EXIT_NO_ERROR, e.status);
     }
   }
