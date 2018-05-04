@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ClockActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewClockStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBoxSpecifyDate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="Specify date" />
+
+            <CheckBox
+                android:id="@+id/checkBoxSpecifyTime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="Specify time" />
+        </LinearLayout>
+        <!--CheckBox
+                    android:id="@+id/checkBoxRound"
+                    android:text="Round up/down to nearest 15 mins."
+                    android:layout_gravity="left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkBoxSpecifyTime"
+                    android:layout_weight="1"/-->
+
+        <CheckBox
+            android:id="@+id/checkBoxDescription"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/checkBoxSpecifyDate"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:text="Add Description" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerClockInList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:drawSelectorOnTop="true" />
+
+            <Button
+                android:id="@+id/buttonClock"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:padding="15dip"
+                android:text="Clock In" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewClockDetails"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="Status:" />
+    </LinearLayout>
+</LinearLayout>
+
+
+

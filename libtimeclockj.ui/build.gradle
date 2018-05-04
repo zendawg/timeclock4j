@@ -1,0 +1,9 @@
+
+description = 'TimeClockJ UI libs'
+
+apply plugin: 'java'
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+

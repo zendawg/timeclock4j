@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Timeclock4J</string>
+    <string name="app_key">dx7udt1haeoagf3</string>
+    <string name="timeclockj_timelog">timelog.txt</string>
+    <string name="title_activity_sync_dropbox">Sync with Dropbox</string>
+    <string name="action_sync">Sync</string>
+</resources>

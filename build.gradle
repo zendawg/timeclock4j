@@ -1,0 +1,16 @@
+
+
+allprojects  {
+  group = 'org.statefive'
+  version = '1.2'
+
+  repositories {
+    jcenter()
+    google()
+  }
+}
+
+subprojects {
+
+}
+

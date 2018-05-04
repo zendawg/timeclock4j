@@ -142,7 +142,7 @@ public class ReportOutput {
       monthLinks = "";
       html.append("<hr>");
       if (ClockManager.DEFAULT_PROJECT_STRING.equals(name)) {
-        // html doesn't like '<defalt>':
+        // html doesn't like '<default>':
         name = "default";
       }
       html.append("<a name=\"");

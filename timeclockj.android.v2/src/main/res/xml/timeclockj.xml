@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Local File Storage"
+    android:key="Local File Information">
+    <PreferenceCategory android:title="TimeClockJ Preferences">
+      <CheckBoxPreference
+        android:key="timeclockj_sdcard"
+        android:summary="Store data on SD Card"
+        android:dialogTitle="SD Card"
+        android:defaultValue="true"
+        android:persistent="true"/>
+      <EditTextPreference android:title="TimeClock Directory"
+                          android:dependency="timeclockj_sdcard"
+                          android:key="timeclockj_timelog_dir"
+                          android:summary="Enter Directory Location"
+                          android:dialogTitle="Enter Directory"
+                          android:defaultValue=""
+                          android:persistent="true"/>
+      <EditTextPreference android:title="TimeClock File"
+                          android:dependency="timeclockj_sdcard"
+                          android:key="timeclockj_timelog"
+                          android:summary="Enter File Location"
+                          android:dialogTitle="Enter Filename"
+                          android:defaultValue="timelog.txt"
+                          android:persistent="true"/>
+      <EditTextPreference android:title="TimeClock Reports"
+                          android:dependency="timeclockj_sdcard"
+                          android:key="timeclockj_report_dir"
+                          android:summary="Enter Reports Directory"
+                          android:dialogTitle="Enter Report Directory"
+                          android:defaultValue="timeclockj-reports"
+                          android:persistent="true"/>
+    </PreferenceCategory>
+  </PreferenceScreen>
+  <PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Dropbox File Storage"
+    android:key="Dropbox File Information">
+    <PreferenceCategory android:title="TimeClockJ Preferences">
+      <CheckBoxPreference
+        android:key="timeclockj_dropbox"
+        android:dependency="timeclockj_sdcard"
+        android:summary="Syncronise with Dropbox"
+        android:dialogTitle="Dropbox Sync"
+        android:defaultValue="false"
+        android:persistent="true"/>
+      <EditTextPreference android:title="Dropbox Directory"
+                          android:dependency="timeclockj_dropbox"
+                          android:key="timeclockj_dropbox_dir"
+                          android:summary="Enter Dropbox Directory Location"
+                          android:dialogTitle="Dropbox Directory"
+                          android:defaultValue=""
+                          android:persistent="true"/>
+    </PreferenceCategory>
+  </PreferenceScreen>
+</PreferenceScreen>

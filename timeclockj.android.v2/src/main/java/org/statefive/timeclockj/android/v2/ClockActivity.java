@@ -14,9 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.statefive.timeclockj.android;
+package org.statefive.timeclockj.android.v2;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -30,6 +29,8 @@ import android.graphics.Color;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,11 +53,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.prefs.Preferences;
 import java.util.regex.Pattern;
 import org.statefive.timeclockj.ClockException;
 import org.statefive.timeclockj.ClockInOutEnum;
@@ -67,7 +66,7 @@ import org.statefive.timeclockj.ClockModel;
 import org.statefive.timeclockj.ReverseLineReader;
 import org.statefive.timeclockj.TimeClockUtils;
 
-public class ClockActivity extends Activity
+public class ClockActivity extends AppCompatActivity
         implements AdapterView.OnItemSelectedListener,
         SharedPreferences.OnSharedPreferenceChangeListener,
         Observer, FileParseListener {
@@ -163,7 +162,7 @@ public class ClockActivity extends Activity
     }
     prefsEditor.putString(ClockActivity.PROEJCTS,
             projects.substring(0, projects.length()));
-    prefsEditor.commit();
+    prefsEditor.apply();
   }
 
   /**
@@ -278,6 +277,7 @@ public class ClockActivity extends Activity
     lastModified = prefs.getLong(ClockActivity.LAST_MODIFIED, lastModified);
     try {
       fileTimeClock = Utils.getInstance().getLocalTimeClockFile(this);
+      System.out.println("timelog file is " + fileTimeClock.getAbsolutePath());
       if (!fileTimeClock.exists()) {
         fileTimeClock.createNewFile();
       }
@@ -343,7 +343,13 @@ public class ClockActivity extends Activity
 //      System.out.println("last clock=" + line.toString());
 //    }
     prefs.registerOnSharedPreferenceChangeListener(this);
-    setContentView(R.layout.clockactivity);
+
+    setContentView(R.layout.activity_clock);
+
+    Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+    System.out.println("Toolbar :: " + toolbar);
+    setSupportActionBar(toolbar);
+
     textViewClockDetails = (TextView) this.findViewById(R.id.textViewClockDetails);
     textViewClockStatus = (TextView) this.findViewById(R.id.textViewClockStatus);
     buttonClock = (Button) this.findViewById(R.id.buttonClock);
@@ -600,10 +606,9 @@ public class ClockActivity extends Activity
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    super.onCreateOptionsMenu(menu);
-    int base = 1;
-    menu.add(base, base, base, "Setup").setIcon(R.drawable.options);
-    return true;
+      // Inflate the menu; this adds items to the action bar if it is present.
+      getMenuInflater().inflate(R.menu.menu_main, menu);
+      return true;
   }
 
   /**
@@ -613,8 +618,8 @@ public class ClockActivity extends Activity
    */
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == 1) {
-      Intent i = new Intent(getApplicationContext(), TimeClockJConfigActivity.class);
+    if (item.getItemId() == R.id.action_sync) {
+      Intent i = new Intent(getApplicationContext(), SyncDropboxActivity.class);
       ClockActivity.this.startActivity(i);
     }
     return true;
@@ -626,13 +631,17 @@ public class ClockActivity extends Activity
    */
   private void loadPreferences() throws IOException {
     fileTimeClock = Utils.getInstance().getLocalTimeClockFile(this);
+    System.out.println("Filename: " + fileTimeClock.getAbsolutePath());
     if (!fileTimeClock.exists()) {
+
       fileTimeClock.createNewFile();
       System.out.println("File created: " + fileTimeClock.getAbsolutePath());
     }
     lastModified = fileTimeClock.lastModified();
     this.preferencesChanged = false;
   }
+
+
 
   /**
    *
@@ -655,7 +664,7 @@ public class ClockActivity extends Activity
       lastModified =
               Utils.getInstance().getLocalTimeClockFile(this).lastModified();
       prefsEditor.putLong(ClockActivity.LAST_MODIFIED, lastModified);
-      prefsEditor.commit();
+      prefsEditor.apply();
     } catch (ClockException cex) {
       showDialog("ClockException", cex.getMessage());
     } catch (IOException ioex) {
@@ -696,7 +705,7 @@ public class ClockActivity extends Activity
       lastModified =
               Utils.getInstance().getLocalTimeClockFile(this).lastModified();
       prefsEditor.putLong(ClockActivity.LAST_MODIFIED, lastModified);
-      prefsEditor.commit();
+      prefsEditor.apply();
       makeNotification();
     } catch (ClockException cex) {
       showDialog("ClockException", cex.getMessage());

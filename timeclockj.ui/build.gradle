@@ -1,0 +1,29 @@
+
+description = 'TimeClockJ UI'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+dependencies {
+  compile project(':libtimeclockj')
+  compile project(':libtimeclockj.ui')
+    compile group: 'commons-cli', name: 'commons-cli', version:'20040117.000000'
+    compile group: 'javax.help', name: 'javahelp', version:'2.0.02'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+mainClassName = "org.statefive.timeclockj.ui.TimeClockJApp"
+applicationName = 'timeclockj-gui'
+
+compileJava {
+    options.deprecation = true
+}
+
+jar {
+    manifest {
+        attributes(
+            'Implementation-Title': description,
+            'Implementation-Version': version
+        )
+    }
+}

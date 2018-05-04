@@ -1,0 +1,2 @@
+
+include ':libtimeclockj', ':timeclockj.tools', ':timeclockj.ui', ':libtimeclockj.ui', ':timeclockj.android.v2'

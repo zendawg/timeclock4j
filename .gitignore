@@ -10,3 +10,10 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+build/
+gradle/
+.gradle/
+.idea/
+local.properties
+.nb-gradle
+timeclockj.android.v2/timeclockj.android.v2.iml
