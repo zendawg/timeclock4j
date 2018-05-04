@@ -29,9 +29,12 @@ On Linux, run:
 
     ./timeclockj-gui -h
    
-To figure out what options to set - recommended are `-i [x]` and `-r` (these are `-i [x]` for interval to check changes to .timelog file, and `-r` to reload on change), as follows:
+To figure out what options to set:
 
-    ./timeclockj-gui -f ~/Dropbox/Timeclock4j/.timelog -i 5 -r
+Recommended are `-i [x]` and `-r` (these are `-i [x]` for interval to check changes to .timelog file, and `-r` to reload on change), as follows:
+For synchronisation with the Android app, the user must set the timelog file to be called '.timelog' in the Apps/Timeclock4j directory in the user's Dropbox directory.
+
+    ./timeclockj-gui -f ~/Dropbox/Apps/Timeclock4j/.timelog -i 5 -r
    
 ... to reload every 5 seconds if a change in the file is detected.
 
@@ -75,4 +78,6 @@ Install the app using Android Studio or from the command line using gradlew:
 
 The purpose of `timeclock4j` originally was to enable synchronisation via Dropbox both through CLI, UI (system tray) and Android versions; when a clock-in or -out was performed, the changes would get pushed to Dropbox and the changes detected by any of the applications being ran.
 
-The Android app has to be synchronised manually (pull & push)
+The Android app has to be synchronised manually (pull & push). The Android app assumes that the timelog file will be called '.timelog' and be in the following directory in the user's Dropbox:
+
+Apps/Timeclock4j
