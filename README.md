@@ -4,37 +4,56 @@ Clock-in and -out using old emacs-style .timelog files.
 
 Reports can also be generated.
 
-# Build Instructions: Desktop and CLI
+# Build Instructions: Desktop, CLI and Android
 
-You'll need Apache Maven installed to build the software. To build, run:
+To build, run:
 
-    mvn clean install
+    gradlew clean install
     
 This will NOT install documentation - see below for this.
     
-To run CLI utilties, change directory into `timeclockj.tools/` and run (on Linux/Mac):
+To run CLI utilties, unzip one of the archives in timeclockj.tools/build/distributions into the location of your choice: <location>
 
-    ./target/appassembler/bin/timeclockj -h
+change directory into `<location>/timeclockj.tools-1.2/bin` and run (on Linux/Mac):
+
+    ./timeclockj.tools -h
     
 ... which will show command line options. On Windows, run:
 
-    cmd target\appassembler\bin\timeclockj.bat -h
+    timeclockj.tools.bat -h
    
-To start the system-docked tray on Linux, run:
+To start the system-docked tray, unzip one of the archives in timeclockj.ui/build/distributions into the location of your choice: <location>:
+and change directory into `<location>/timeclockj-gui-1.2/bin`
 
-    ./timeclockj.ui/target/appassembler/bin/timeclockj-gui -h
+On Linux, run:
+
+    ./timeclockj-gui -h
    
 To figure out what options to set - recommended are `-i [x]` and `-r` (these are `-i [x]` for interval to check changes to .timelog file, and `-r` to reload on change), as follows:
 
-    ./timeclockj.ui/target/appassembler/bin/timeclockj-gui -i 5 -r
+    ./timeclockj-gui -f ~/Dropbox/Timeclock4j/.timelog -i 5 -r
    
 ... to reload every 5 seconds if a change in the file is detected.
 
-The same is true for Windows, except use the `cmd` executable and suffix the file with `.bat` and ensure path separators are back-sashes, not (*nix-like) forward slashes.
+On Windows, run:
+
+	timeclockj-gui.bat -has
+	
+or (replacing <username> appropriately):
+
+	timeclockj-gui.bat --file C:\Users\<username>\Dropbox\Apps\Timeclock4j\.timelog -i 5 -r 
+
+You might like to put a shortcut to a bat file containing the following line in your Startup directory
+
+(which on Windows 10 is C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup):
+
+start /min timeclockj-gui.bat --file C:\Users\<username>\Dropbox\Apps\Timeclock4j\.timelog -i 5 -r 
 
 # Generating Documentation
 
-In order to generate documentation, the tex suite of tools is used. For Maven, these are only invoked when the `-Dgenerate.docs=true` is set.
+In order to generate documentation, the tex suite of tools is used. 
+
+The maven (or ant) build scripts must be invoked from inside the timeclockj.docs directory
 
 Files are generated in target/docs and produce several new directories for different formats and options of formatting:
 
@@ -48,10 +67,12 @@ Simply open up the `index.html` file kept within that directory with your prefer
 
 # Android
 
-The version of Android has not worked in a long time - there are plans to migrate this to Gradle.
+Install the app using Android Studio or from the command line using gradlew:
+
+	gradlew installDebug
 
 # Synchronisation & Origins
 
 The purpose of `timeclock4j` originally was to enable synchronisation via Dropbox both through CLI, UI (system tray) and Android versions; when a clock-in or -out was performed, the changes would get pushed to Dropbox and the changes detected by any of the applications being ran.
 
-With the deprecation of the Maven Android version, this has now become defunct, although there are plans to re-implement this in the near future.
+The Android app has to be synchronised manually (pull & push)
